@@ -52,9 +52,45 @@
                     <h2 class="section-heading">We've got what you need!</h2>
                     <hr class="light">
                     <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+                    <button type="button" class="btn btn-default btn-lg" id="myBtn">Login Here</button>
                 </div>
             </div>
+
+            <!-- Modal -->
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header" style="padding:35px 50px;">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4><i class="fa fa-lock"></i> Login</h4>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+                      <form role="form">
+                        <div class="form-group">
+                          <label for="usrname"><i class="fa fa-user"></i> Username</label>
+                          <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                          <label for="psw"><i class="fa fa-eye"></i> Password</label>
+                          <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                        </div>
+                        <div class="checkbox">
+                          <label><input type="checkbox" value="" checked> Remember me</label>
+                        </div>
+                          <button type="submit" class="btn btn-success btn-block"><i class="fa fa-power-off"></i> Login</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                      <p>Not a member? <a href="#">Sign Up</a></p>
+                      <p>Forgot <a href="#">Password?</a></p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div> 
         </div>
     </section>
 

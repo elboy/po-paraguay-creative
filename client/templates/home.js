@@ -36,6 +36,9 @@ Template.home.events({
             scrollTop: ($($anchor.attr('href')).offset().top - 50)
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
+    },
+    'click #myBtn': function(){
+        $("#myModal").modal();
     }
 });
 
