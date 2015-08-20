@@ -20,6 +20,8 @@ Template.home.onRendered(function(){
         }
     });
 
+    Session.set("signin", true);
+
     // Initialize WOW.js Scrolling Animations
 	new WOW().init();
 
@@ -38,7 +40,17 @@ Template.home.events({
         event.preventDefault();
     },
     'click #myBtn': function(){
-        $("#myModal").modal();
+        if (Meteor.user()){
+            Router.go("/signout");
+        } else {
+            $("#signin-modal").modal();
+        }
+    }
+});
+
+Template.home.helpers({
+    'signin':function(){
+        return Session.get("signin");
     }
 });
 

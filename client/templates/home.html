@@ -56,41 +56,8 @@
                 </div>
             </div>
 
-            <!-- Modal -->
-              <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                
-                  <!-- Modal content-->
-                  <div class="modal-content">
-                    <div class="modal-header" style="padding:35px 50px;">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4><i class="fa fa-lock"></i> Login</h4>
-                    </div>
-                    <div class="modal-body" style="padding:40px 50px;">
-                      <form role="form">
-                        <div class="form-group">
-                          <label for="usrname"><i class="fa fa-user"></i> Username</label>
-                          <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                          <label for="psw"><i class="fa fa-eye"></i> Password</label>
-                          <input type="text" class="form-control" id="psw" placeholder="Enter password">
-                        </div>
-                        <div class="checkbox">
-                          <label><input type="checkbox" value="" checked> Remember me</label>
-                        </div>
-                          <button type="submit" class="btn btn-success btn-block"><i class="fa fa-power-off"></i> Login</button>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
-                      <p>Not a member? <a href="#">Sign Up</a></p>
-                      <p>Forgot <a href="#">Password?</a></p>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div> 
+            {{> SignIn}}
+            {{> SignUp}}
         </div>
     </section>
 
