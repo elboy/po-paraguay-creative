@@ -5,7 +5,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
 fortawesome:fontawesome
 less
@@ -14,3 +13,9 @@ jquery
 mrt:jquery-easing
 frabrunelle:fittext
 noorderstorm:wow
+accounts-facebook
+accounts-password
+msavin:mongol
+tanis:bootstrap-social
+service-configuration
+autopublish

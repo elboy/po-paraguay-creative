@@ -1,0 +1,34 @@
+/* orange #f05f40 
+ * orange eb3812 hover */
+
+.modal-header, h4, .close {
+  /*background-color: #5cb85c;*/
+  background-color: #00a8e1;
+  color:white !important;
+  text-align: center;
+  font-size: 30px;
+}
+
+.btn-facebook {
+  border-radius: 5px;
+}
+
+.btn-facebook:hover{
+  color: #f9f9f9;
+}
+
+.option-divider {
+  text-align: center;
+  margin: 16px 0;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.modal-body{
+  color: #000;
+}
+
+.modal-footer {
+  background-color: #f9f9f9;
+  color: #000;
+}
