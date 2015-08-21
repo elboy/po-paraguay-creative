@@ -9,6 +9,8 @@ Template.SignUp.events({
 
     if (isNotEmpty(email) && isNotEmpty(password) && isEmail(email) && areValidPasswords(password, passwordConfirm)) {
 
+      // Can pass username instead of email.
+      // Can add profile
       Accounts.createUser({email: email, password: password}, function(err) {
         if (err) {
           if (err.message === 'Email already exists. [403]') {
