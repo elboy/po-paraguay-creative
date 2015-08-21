@@ -14,7 +14,6 @@ Template.SignIn.events({
         } else {
           console.log('Welcome back Meteorite!');
           $('#signin-modal').modal('hide');
-          Router.go('/signout');
         }
       });
 
@@ -23,7 +22,17 @@ Template.SignIn.events({
   },
   'click #signup-button': function(){
         $("#signup-modal").modal();
-    }
+  },
+  'click #facebook-signin': function(){
+    Meteor.loginWithFacebook(function(err){
+        if (err) {
+          console.log("Error in loginWithFacebook in signin");
+        } else {
+          console.log('Welcome back Meteorite!');
+          $('#signin-modal').modal('hide');
+        }
+    });
+  }
 });
 
 
