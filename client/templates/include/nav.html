@@ -9,7 +9,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Po Paraguay</a>
+                <!--<a class="navbar-brand page-scroll" href="#pageTop">Po Paraguay</a>-->
+                <a class="navbar-brand page-scroll" href="{{pathFor route='home'}}">Po Paraguay</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,6 +28,15 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                    {{#if currentUser}}
+                        <li>
+                            <a id="nav-signout">Logout</a>
+                        </li>
+                    {{else}}
+                        <li>
+                            <a id="nav-signin">Login</a>
+                        </li>
+                    {{/if}}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

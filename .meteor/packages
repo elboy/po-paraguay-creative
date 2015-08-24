@@ -20,3 +20,8 @@ tanis:bootstrap-social
 service-configuration
 autopublish
 nemo64:bootstrap
+alanning:roles
+sacha:spin
+nekojira:cloudinary-jquery-upload
+aldeed:collection2
+aldeed:autoform

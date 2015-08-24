@@ -28,6 +28,23 @@ Template.nav.events({
             scrollTop: ($($anchor.attr('href')).offset().top - 50)
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
+    },
+    'click #nav-signin':function(){
+        if (Meteor.user()){
+            Router.go("/dashboard");
+        } else {
+            $("#signin-modal").modal();
+        }
+    },
+    'click #nav-signout':function(){
+        Meteor.logout(function(err) {
+            if(err){
+                console.log("Error in logging out: ", err);
+            } else {
+                console.log('Bye Meteorite! Come back whenever you want!');
+                // Iron Router routes to home
+            }
+        });
     }
 });
 
