@@ -1,17 +1,9 @@
-Template.home.onRendered(function(){
+Template.nav.onRendered(function(){
     // Highlight the top nav as scrolling occurs
     $('body').scrollspy({
         target: '.navbar-fixed-top',
         offset: 51
     });
-
-    // Fit Text Plugin for Main Header
-    $("h1").fitText(
-        1.2, {
-            minFontSize: '35px',
-            maxFontSize: '65px'
-        }
-    );
 
     // Offset for Main Navigation
     $('#mainNav').affix({
@@ -20,14 +12,12 @@ Template.home.onRendered(function(){
         }
     });
 
-    Session.set("signin", true);
-
     // Initialize WOW.js Scrolling Animations
 	new WOW().init();
 
 });
 
-Template.home.events({
+Template.nav.events({
 	// Closes the Responsive Menu on Menu Item Click
 	'click .navbar-collapse ul li a': function() {
     	$('.navbar-toggle:visible').click();
@@ -38,19 +28,6 @@ Template.home.events({
             scrollTop: ($($anchor.attr('href')).offset().top - 50)
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
-    },
-    'click #myBtn': function(){
-        if (Meteor.user()){
-            Router.go("/signout");
-        } else {
-            $("#signin-modal").modal();
-        }
-    }
-});
-
-Template.home.helpers({
-    'signin':function(){
-        return Session.get("signin");
     }
 });
 
