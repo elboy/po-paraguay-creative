@@ -1,10 +1,10 @@
 Template.signIn.events({
-    'submit #signInForm': function(e, t) {
+    'submit #signin-form': function(e, t) {
         e.preventDefault();
 
         var signInForm = $(e.currentTarget),
-            email = trimInput(signInForm.find('#signInEmail').val().toLowerCase()),
-            password = signInForm.find('#signInPassword').val();
+            email = trimInput(signInForm.find('#signin-email').val().toLowerCase()),
+            password = signInForm.find('#signin-password').val();
 
         if (isNotEmpty(email) && isEmail(email) && isNotEmpty(password) && isValidPassword(password)) {
 
@@ -12,7 +12,7 @@ Template.signIn.events({
                 if (err) {
                     console.log('These credentials are not valid.');
                 } else {
-                    console.log('Welcome back Meteorite!');
+                    console.log('Welcome back Po User!');
                     $('#signin-modal').modal('hide');
                     Router.go('dashboard');
                 }
@@ -28,7 +28,7 @@ Template.signIn.events({
             if (err) {
                 console.log("Error in loginWithFacebook in signin");
             } else {
-                console.log('Welcome back Meteorite!');
+                console.log('Welcome back Po User!');
                 $('#signin-modal').modal('hide');
                 Router.go('dashboard');
             }

@@ -3,9 +3,9 @@ Template.signUp.events({
         e.preventDefault();
 
         var signUpForm = $(e.currentTarget),
-            email = trimInput(signUpForm.find('#signUpEmail').val().toLowerCase()),
-            password = signUpForm.find('#signUpPassword').val(),
-            passwordConfirm = signUpForm.find('#signUpPasswordConfirm').val();
+            email = trimInput(signUpForm.find('#signup-email').val().toLowerCase()),
+            password = signUpForm.find('#signup-password').val(),
+            passwordConfirm = signUpForm.find('#signup-password-confirm').val();
 
         if (isNotEmpty(email) && isNotEmpty(password) && isEmail(email) && areValidPasswords(password, passwordConfirm)) {
 

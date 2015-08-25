@@ -1,4 +1,4 @@
-Template.nav.onRendered(function(){
+Template.homeNav.onRendered(function(){
     // Highlight the top nav as scrolling occurs
     $('body').scrollspy({
         target: '.navbar-fixed-top',
@@ -6,7 +6,7 @@ Template.nav.onRendered(function(){
     });
 
     // Offset for Main Navigation
-    $('#mainNav').affix({
+    $('#home-nav').affix({
         offset: {
             top: 100
         }
@@ -17,7 +17,7 @@ Template.nav.onRendered(function(){
 
 });
 
-Template.nav.events({
+Template.homeNav.events({
 	// Closes the Responsive Menu on Menu Item Click
 	'click .navbar-collapse ul li a': function() {
     	$('.navbar-toggle:visible').click();
@@ -29,14 +29,14 @@ Template.nav.events({
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
     },
-    'click #nav-signin':function(){
+    'click .signin':function(){
         if (Meteor.user()){
             Router.go("/dashboard");
         } else {
             $("#signin-modal").modal();
         }
     },
-    'click #nav-signout':function(){
+    'click .signout':function(){
         Meteor.logout(function(err) {
             if(err){
                 console.log("Error in logging out: ", err);
