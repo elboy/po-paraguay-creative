@@ -41,7 +41,7 @@ Template.homeNav.events({
             if(err){
                 console.log("Error in logging out: ", err);
             } else {
-                console.log('Bye Meteorite! Come back whenever you want!');
+                console.log('Bye Po User! Come back whenever you want!');
                 // Iron Router routes to home
             }
         });
