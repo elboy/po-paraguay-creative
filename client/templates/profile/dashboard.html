@@ -1,0 +1,92 @@
+<template name="dashboard">
+	<section id="dashboard-orders">
+		{{#if orderCount}}
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h2>Orders:</h2>
+					</div>
+					{{#each orders}}
+						{{> order}}
+					{{/each}}
+				</div>
+			</div>
+		{{else}}
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="order">
+							{{> dashboardHeader}}
+						</div>
+					</div>
+				</div>
+			</div>
+		{{/if}}
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2>New Order:</h2>
+				</div>
+				<div class="col-sm-6 text-center">
+					{{> dashboardButton text="For me"}}
+				</div>
+				<div class="col-sm-6 text-center">
+					{{> dashboardButton text="For someone else"}}
+				</div>
+			</div>
+		</div>
+
+	</section>
+</template>
+
+<template name="order">
+
+	<div class="col-xs-12">
+		{{name}}
+	</div>
+
+	<div class="col-xs-3">
+		<div class="progress link-to-info link">
+			<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+		    	Order info (complete)
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-3">
+		<div class="progress link-to-photo link">
+			<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+		    	Photo upload (incomplete)
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-3">
+	{{#if admin_approval}}
+		<div class="progress link-to-personalize link">
+			<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+		    	Personalize (incomplete)
+			</div>
+		</div>
+	{{/if}}
+	</div>
+
+	<div class="col-xs-3">
+	{{#if reached_checkout}}
+		<div class="progress link-to-checkout link">
+			<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+		    	Checkout
+			</div>
+		</div>
+	{{/if}}
+	</div>
+</template>
+
+<template name="dashboardHeader">
+	<h1>You have not ordered any hands. Click a button below to begin an order.</h1>
+</template>
+
+<template name="dashboardButton">
+	<a href="{{pathFor 'create'}}" class="btn btn-info btn-lg" role="button">{{text}}</a>
+</template>

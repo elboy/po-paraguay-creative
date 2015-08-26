@@ -1,0 +1,48 @@
+<template name="signUp">
+	<!-- Modal -->
+	<div class="modal" id="signup-modal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header" style="padding:35px 50px;">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4><i class="fa fa-lock"></i> Sign Up</h4>
+				</div>
+
+				<div class="modal-body" style="padding:40px 50px;">
+				    <a class="btn btn-block btn-social btn-facebook" id="facebook-signup">
+						<i class="fa fa-facebook"></i> Sign in with Facebook
+						</a>
+						<div class="option-divider">or</div>
+			    	<!-- begin #sign-in-form -->
+					<form role="form" id="signUpForm" method="post">
+					    <div class="form-group">
+					    	<label for="usrname"><i class="fa fa-user"></i> Username</label>
+					    	<input id="signup-email" class="form-control" name="email" placeholder="Email Address" type="text">
+					    </div>
+					    <div class="form-group">
+					    	<label for="psw"><i class="fa fa-eye"></i> Password</label>
+					    	<input id="signup-password" name="password" placeholder="Password" class="form-control" type="password">
+					    </div>
+					    <div class="form-group">
+					    	<label for="psw"><i class="fa fa-eye"></i> Password (again)</label>
+					    	<input id="signup-password-confirm" name="password-confirm" placeholder="Confirm" class="form-control" type="password">
+					    </div>
+					    <button type="submit" class="btn btn-success btn-block"><i class="fa fa-power-off"></i> Sign Up</button>
+					</form>
+				    <!-- end #sign-up-form -->
+				</div>
+
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+					<p>Already a member? <a id="signin-button" data-dismiss="modal" data-toggle="modal" href="#">Sign In</a></p>
+				</div>
+			</div>
+		  
+		</div>
+	</div> 
+
+</template>
+
+

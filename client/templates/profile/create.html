@@ -1,0 +1,22 @@
+<template name="create">
+	<section id="create-order-form">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="order-form">	
+						{{#autoForm collection="Orders" id="insertOrderForm" type="insert"}}
+							<fieldset>
+								<legend>Add an order</legend>
+								{{> afQuickField name='name' placeholder="schemaLabel"}}
+								{{> afQuickField name='date_of_birth'}}
+								{{> afQuickField name='address' placeholder="schemaLabel"}}
+								{{> afQuickField name='phone_number' id="desc" }}
+							</fieldset>
+							<button type="submit" class="btn btn-info">Continue</button>
+						{{/autoForm}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>

@@ -1,33 +1,23 @@
-Template.home.onRendered(function(){
+Template.homeNav.onRendered(function(){
     // Highlight the top nav as scrolling occurs
     $('body').scrollspy({
         target: '.navbar-fixed-top',
         offset: 51
     });
 
-    // Fit Text Plugin for Main Header
-    $("h1").fitText(
-        1.2, {
-            minFontSize: '35px',
-            maxFontSize: '65px'
-        }
-    );
-
     // Offset for Main Navigation
-    $('#mainNav').affix({
+    $('#home-nav').affix({
         offset: {
             top: 100
         }
     });
-
-    Session.set("signin", true);
 
     // Initialize WOW.js Scrolling Animations
 	new WOW().init();
 
 });
 
-Template.home.events({
+Template.homeNav.events({
 	// Closes the Responsive Menu on Menu Item Click
 	'click .navbar-collapse ul li a': function() {
     	$('.navbar-toggle:visible').click();
@@ -39,18 +29,22 @@ Template.home.events({
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
     },
-    'click #myBtn': function(){
+    'click .signin':function(){
         if (Meteor.user()){
-            Router.go("/signout");
+            Router.go("/dashboard");
         } else {
             $("#signin-modal").modal();
         }
-    }
-});
-
-Template.home.helpers({
-    'signin':function(){
-        return Session.get("signin");
+    },
+    'click .signout':function(){
+        Meteor.logout(function(err) {
+            if(err){
+                console.log("Error in logging out: ", err);
+            } else {
+                console.log('Bye Po User! Come back whenever you want!');
+                // Iron Router routes to home
+            }
+        });
     }
 });
 
