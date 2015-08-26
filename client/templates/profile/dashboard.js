@@ -27,3 +27,17 @@ Template.dashboard.events({
 		Router.go('checkout', {_id: orderId});
 	}
 });
+
+Template.order.helpers({
+	photoColor:function(){
+		return this.admin_approval ? "progress-bar-success" : "progress-bar-warning";
+	},
+	personalizeColor:function(){
+		return this.reached_checkout ? "progress-bar-success" : "progress-bar-warning";
+	},
+	checkoutColor:function(){
+		return this.order_complete ? "progress-bar-success" : "progress-bar-warning";
+		
+	}
+
+});
