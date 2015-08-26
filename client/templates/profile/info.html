@@ -1,0 +1,48 @@
+<template name="info">
+	{{> profileNav}}
+	<section id="info-order">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					Name: {{name}} <br>
+					Address: {{address}} <br>
+					Phone number: {{phone_number}}
+
+				</div>
+			</div>
+		</div>
+	</section>
+</template>
+
+<template name="profileNav">
+	<section id="profile-navbar">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					{{this.name}}
+					<!-- Single button -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Action <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li class="link-to-info link">
+								<a>Order Info</a>
+							</li>
+							<li class="link-to-photo link">
+								<a>Photo Upload</a>
+							</li>
+							<li class="link-to-personalize {{personalizeDisabled}}">
+								<a>Personalize</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li class="link-to-checkout {{checkoutDisabled}}">
+								<a>Checkout</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>

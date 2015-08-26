@@ -1,15 +1,13 @@
-orders = Orders.find({}, {sort: {created_at: -1}});
-
-Template.dashboard.helpers({
-	orders: function(){
-		return orders;
+Template.profileNav.helpers({
+	personalizeDisabled: function(){
+		return this.admin_approval ? "link" : "disabled";
 	},
-	orderCount: function(){
-		return orders.count();
+	checkoutDisabled: function(){
+		return this.reached_checkout ? "link" : "disabled";
 	}
 });
 
-Template.dashboard.events({
+Template.profileNav.events({
 	'click .link-to-info':function(){
 		var orderId = this._id;
 		Router.go('info', {_id: orderId});
@@ -27,3 +25,4 @@ Template.dashboard.events({
 		Router.go('checkout', {_id: orderId});
 	}
 });
+
