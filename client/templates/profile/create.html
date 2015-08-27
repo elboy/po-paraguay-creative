@@ -1,21 +1,42 @@
 <template name="create">
-	<section id="create-order-form">
+	<section class="profile-header" id="create-header">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12">
-					<div class="order-form">	
-						{{#autoForm collection="Orders" id="insertOrderForm" type="insert"}}
-							<fieldset>
-								<legend>Add an order</legend>
-								{{> afQuickField name='name' placeholder="schemaLabel"}}
-								{{> afQuickField name='date_of_birth'}}
-								{{> afQuickField name='address' placeholder="schemaLabel"}}
-								{{> afQuickField name='phone_number' id="desc" }}
-							</fieldset>
-							<button type="submit" class="btn btn-info">Continue</button>
-						{{/autoForm}}
-					</div>
+				<div class="col-xs-3">
+					<i class="fa fa-clipboard profile-header-icon"></i>
 				</div>
+				<div class="col-xs-9">
+					<h1 class="paso-1-create">PASO 1</h1>
+					<h2 class="datos-personales">Datos Personales</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-orange" id="create-order-form">
+		<div class="container">
+			<div class="order-form">	
+				{{#autoForm collection="Orders" id="insertOrderForm" type="insert" template="plain"}}
+					<fieldset>
+						<div class="row">
+							<div class="col-xs-6">
+								{{> afQuickField name='name' placeholder="schemaLabel" class="form-input"}}
+							</div>
+							<div class="col-xs-6">
+								{{> afQuickField name='date_of_birth' class="form-input"}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								{{> afQuickField name='address' placeholder="schemaLabel" class="form-input"}}
+							</div>
+							<div class="col-xs-6">
+								{{> afQuickField name='phone_number' id="desc" class="form-input"}}
+							</div>
+						</div>
+					</fieldset>
+					<button type="submit" class="btn btn-info">Continue</button>
+				{{/autoForm}}
 			</div>
 		</div>
 	</section>

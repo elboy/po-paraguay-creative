@@ -1,4 +1,19 @@
 <template name="info">
+	<section class="profile-header" id="info-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3">
+					<i class="fa fa-clipboard profile-header-icon"></i>
+				</div>
+				<div class="col-xs-9">
+					<h1 class="paso-1-info">PASO 1</h1>
+					<h2 class="datos-personales">Datos Personales</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 	{{> profileNav}}
 	<section id="info-order">
 		<div class="container">
@@ -15,7 +30,7 @@
 </template>
 
 <template name="profileNav">
-	<section id="profile-navbar">
+	<section class="bg-green profile-navbar">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -27,21 +42,21 @@
 						</button>
 						<ul class="dropdown-menu">
 							<li class="link-to-dashboard link">
-								<a href="{{pathFor 'dashboard'}}">Profile <i class="fa fa-user"></i></a>
+								<a href="{{pathFor 'dashboard'}}"><i class="fa fa-user fa-fw"></i> Profile</a>
 							</li>
 							<li role="separator" class="divider"></li>
 							<li class="link-to-info link">
-								<a>Order Info <i class="fa fa-info"></i></a>
+								<a><i class="fa fa-info fa-fw"></i> Order Info </a>
 							</li>
 							<li class="link-to-photo link">
-								<a>Photo Upload <i class="fa fa-camera"></i></a>
+								<a><i class="fa fa-camera fa-fw"></i> Photo Upload</a>
 							</li>
 							<li class="link-to-personalize {{personalizeDisabled}}">
-								<a>Personalize <i class="fa fa-hand-peace-o"></i></a>
+								<a><i class="fa fa-hand-peace-o fa-fw"></i> Personalize</a>
 							</li>
 							<li role="separator" class="divider"></li>
 							<li class="link-to-checkout {{checkoutDisabled}}">
-								<a>Checkout <i class="fa fa-check"></i></a>
+								<a><i class="fa fa-check fa-fw"></i> Checkout</a>
 							</li>
 						</ul>
 					</div>

@@ -1,13 +1,35 @@
-@import "homevariables.import.less";
-@import "homemixins.import.less";
-
-.link {
-	cursor: hand;
-	cursor: pointer;
-}
-
 #main{
 	section {
-    	padding: 50px 0;
+		padding: 25px 0;
 	}
+
+	.profile-header {
+		text-align: center;
+    	padding: 60px 0 10px 0;
+
+    	h1 {
+    		margin-top: 0px;
+    		margin-bottom: 5px;
+    		color: @po-blue;
+    		font-size: 50px;
+    		height: 50px;
+    	}
+
+    	h2 {
+    		color: @po-coral;
+    		font-size: 35px;
+    		margin: 5px 0 0 0;
+    		display: inline-block;
+
+    		border-color: @po-coral;
+    		border-top: 1px solid;
+    		border-bottom: 1px solid;
+    	}
+
+    	.profile-header-icon {
+    		margin: 10px 0;
+    		color: @po-blue;
+    		font-size: 95px;
+    	}
+   	}
 }

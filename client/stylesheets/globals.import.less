@@ -1,5 +1,7 @@
 // some basic styles
 
+// Variables
+
 // Po Colors
 @po-blue:               #00a8e1;
 @po-yellow:             #ffcf2b;
@@ -7,3 +9,51 @@
 @po-coral:              #ff675d;
 @po-pink:               #eb4d99;
 @po-green:              #9ac21f;
+
+@theme-primary: #F05F40;
+@theme-dark: #222;
+
+// Global Components
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    .serif-font;
+}
+
+hr {
+    border-color: @theme-primary;
+    border-width: 3px;
+    max-width: 50px;
+}
+
+hr.light {
+    border-color: white;
+}
+
+a {
+    .transition-all;
+    color: @theme-primary;
+    &:hover,
+    &:focus {
+        color: darken(@theme-primary, 10%);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    .sans-serif-font;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}

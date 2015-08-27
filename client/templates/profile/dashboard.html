@@ -1,5 +1,19 @@
 <template name="dashboard">
-	<section id="dashboard-orders">
+	<section class="profile-header" id="dashboard-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3">
+					<i class="fa fa-spinner fa-spin profile-header-icon"></i>
+				</div>
+				<div class="col-xs-9">
+					<h1 class="estado">ESTADO</h1>
+					<h2 class="de-pedidos">de Pedidos</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-orange" id="dashboard-orders">
 		{{#if orderCount}}
 			<div class="container">
 				<div class="row">

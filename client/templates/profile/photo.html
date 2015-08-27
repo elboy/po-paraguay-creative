@@ -1,17 +1,35 @@
 <template name="photo">
+	<section class="profile-header" id="photo-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3">
+					<i class="fa fa-camera profile-header-icon"></i>
+				</div>
+				<div class="col-xs-9">
+					<h1 class="paso-1">PASO 2</h1>
+					<h2 class="datos-personales">Subir Fotos</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	{{> profileNav}}
 
-	<section id="photo-instructions">
+	<section class="bg-blue" id="photo-instructions">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 					<h2 class="text-center">Choose case</h2>
 				</div>
-				<div class="col-sm-6 text-center">
-					<button id="wrist-movement" type="button" class="btn btn-info btn-lg">Wrist Movement</button>
+				<div class="col-xs-6">
+					<button type="button" id="wrist-movement" class="btn btn-default btn-circle">
+						<i class="fa fa-hand-paper-o"></i>
+					</button>
 				</div>
-				<div class="col-sm-6 text-center">
-					<button id="no-wrist-movement" type="button" class="btn btn-info btn-lg">No Wrist Movement</button>
+				<div class="col-xs-6 ">
+					<button type="button" id="no-wrist-movement" class="btn btn-default btn-circle">
+						<i class="fa fa-hand-paper-o"></i>
+					</button>
 				</div>
 			</div>
 		</div>
