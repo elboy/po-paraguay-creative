@@ -5,7 +5,7 @@
 				<div class="col-xs-3">
 					<i class="fa fa-clipboard profile-header-icon"></i>
 				</div>
-				<div class="col-xs-9">
+				<div class="col-xs-8 col-xs-offset-1">
 					<h1 class="paso-1-info">PASO 1</h1>
 					<h2 class="datos-personales">Datos Personales</h2>
 				</div>
@@ -30,15 +30,15 @@
 </template>
 
 <template name="profileNav">
-	<section class="bg-green profile-navbar">
+	<section class="profile-navbar bg-yellow">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					{{this.name}}
+					<!--Order for: {{this.name}}-->
 					<!-- Single button -->
 					<div class="btn-group">
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Action <span class="caret"></span>
+						<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Navigate <span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu">
 							<li class="link-to-dashboard link">

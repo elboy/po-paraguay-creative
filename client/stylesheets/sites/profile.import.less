@@ -32,4 +32,35 @@
     		font-size: 95px;
     	}
    	}
+
+   	.btn-circle {
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		padding: 6px;
+		font-size: 50px;
+		line-height: 1.42;
+		border-radius: 50%;
+		background-color: transparent;
+		border: 2px solid @po-blue;
+
+		&:hover,
+		&:active,
+		&:target {
+			background-color: @po-blue;
+			color: @po-yellow;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.button-description {
+		text-align: center;
+		border-radius: 10px;
+		background-color: @po-blue;
+		display: inline-block;
+		padding: 5px;
+		margin: 10px 0;
+	}
 }

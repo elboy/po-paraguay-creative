@@ -18,13 +18,5 @@ Template.photo.events({
 	},
 	'click #no-wrist-movement': function(){
 		Session.set("case", 2);
-	},
-	'click .link-to-info':function(){
-		var orderId = this._id;
-		Router.go('info', {_id: orderId});
-	},
-	'click .link-to-photo':function(){
-		var orderId = this._id;
-		Router.go('photo', {_id: orderId});
 	}
 });

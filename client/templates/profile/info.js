@@ -17,12 +17,16 @@ Template.profileNav.events({
 		Router.go('photo', {_id: orderId});
 	},
 	'click .link-to-personalize':function(){
-		var orderId = this._id;
-		Router.go('personalize', {_id: orderId});
+		if (this.admin_approval){
+			var orderId = this._id;
+			Router.go('personalize', {_id: orderId});
+		}
 	},
 	'click .link-to-checkout':function(){
-		var orderId = this._id;
-		Router.go('checkout', {_id: orderId});
+		if (this.reached_checkout){
+			var orderId = this._id;
+			Router.go('checkout', {_id: orderId});
+		}
 	}
 });
 

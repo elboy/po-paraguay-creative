@@ -2,6 +2,15 @@
 // all site depending styles
 
 #home-main {
+    a {
+        .transition-all;
+        color: @theme-primary;
+        &:hover,
+        &:focus {
+            color: darken(@theme-primary, 10%);
+        }
+    }
+
     .bg-primary {
         background-color: @theme-primary;
     }

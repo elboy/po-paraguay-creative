@@ -5,7 +5,7 @@
 				<div class="col-xs-3">
 					<i class="fa fa-camera profile-header-icon"></i>
 				</div>
-				<div class="col-xs-9">
+				<div class="col-xs-8 col-xs-offset-1">
 					<h1 class="paso-1">PASO 2</h1>
 					<h2 class="datos-personales">Subir Fotos</h2>
 				</div>
@@ -15,33 +15,43 @@
 
 	{{> profileNav}}
 
-	<section class="bg-blue" id="photo-instructions">
+	<section class="bg-yellow" id="photo-buttons">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 					<h2 class="text-center">Choose case</h2>
 				</div>
-				<div class="col-xs-6">
-					<button type="button" id="wrist-movement" class="btn btn-default btn-circle">
+				<div class="col-xs-6 text-center">
+					<button type="button" id="wrist-movement" class="btn btn-circle">
 						<i class="fa fa-hand-paper-o"></i>
 					</button>
+					<br>
+					<div class="button-description">
+						Con movemiento de muneca
+					</div>
 				</div>
-				<div class="col-xs-6 ">
-					<button type="button" id="no-wrist-movement" class="btn btn-default btn-circle">
+				<div class="col-xs-6 text-center">
+					<button type="button" id="no-wrist-movement" class="btn btn-circle">
 						<i class="fa fa-hand-paper-o"></i>
 					</button>
+					<br>
+					<div class="button-description">
+						Sin movemiento de muneca
+					</div>
 				</div>
 			</div>
 		</div>
+	</section>
 
 	{{#if clicked}}
+	<section id="photo-instructions">
 		<div class="container">
 			<div class="row">
 			{{#if wristMovement}}
-				<div class="col-sm-6">
+				<div class="col-xs-6">
 					<p>Icon of wrist movement here.</p>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-xs-6">
 					<p>Consigue un boligrafo, una regla y una camara.
 					</p>
 					<p>Traza una linea en tu munheca y otra en la mitad del antebrazo  de ambos lados. 
@@ -50,10 +60,10 @@
 					</p>
 				</div>
 			{{else}}
-				<div class="col-sm-6">
+				<div class="col-xs-6">
 					<p>Icon of no wrist movement here.</p>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-xs-6">
 					<p>Consigue un boligrafo, una regla y una camara.
 					</p>
 					<p>Traza una linea en tu munheca y otra en la mitad del antebrazo  de ambos lados. 
@@ -64,11 +74,9 @@
 			{{/if}}
 			</div>
 		</div>
-	{{/if}}
 	</section>
 
-{{#if clicked}}
-	<section id="photo-uploads">
+	<section class="bg-yellow" id="photo-uploads">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -99,7 +107,7 @@
 			</div>
 		</div>
 	</section>
-{{/if}}
+	{{/if}}
 
 </template>
 

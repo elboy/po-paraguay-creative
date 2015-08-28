@@ -13,7 +13,7 @@
 		</div>
 	</section>
 
-	<section class="bg-orange" id="dashboard-orders">
+	<section class="bg-blue" id="dashboard-orders">
 		{{#if orderCount}}
 			<div class="container">
 				<div class="row">
@@ -36,21 +36,34 @@
 				</div>
 			</div>
 		{{/if}}
+	</section>
 
+	<section class="bg-yellow" id="dashboard-create-buttons">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>New Order:</h2>
+					<h2 class="text-center">Choose case</h2>
 				</div>
-				<div class="col-sm-6 text-center">
-					{{> dashboardButton text="For me"}}
+				<div class="col-xs-6 text-center">
+					<a href="{{pathFor 'create'}}" role="button" id="for-me" class="btn btn-circle">
+						<i class="fa fa-hand-paper-o"></i>
+					</a>
+					<br>
+					<div class="button-description">
+						Con movemiento de muneca
+					</div>
 				</div>
-				<div class="col-sm-6 text-center">
-					{{> dashboardButton text="For someone else"}}
+				<div class="col-xs-6 text-center">
+					<a href="{{pathFor 'create'}}" role="button" id="for-someone-else" class="btn btn-circle">
+						<i class="fa fa-hand-paper-o"></i>
+					</a>
+					<br>
+					<div class="button-description">
+						Sin movemiento de muneca
+					</div>
 				</div>
 			</div>
 		</div>
-
 	</section>
 </template>
 
@@ -80,51 +93,8 @@
 		{{/if}}
 		</div>
 	</div>
-
-<!--
-	<div class="col-sm-3">
-		<div class="progress link-to-info link">
-			<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-		    	Order Info
-			</div>
-		</div>
-	</div>
-
-	<div class="col-sm-3">
-		<div class="progress link-to-photo link">
-			<div class="progress-bar {{photoColor}} progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-		    	Photo upload
-			</div>
-		</div>
-	</div>
-
-	<div class="col-sm-3">
-	{{#if admin_approval}}
-		<div class="progress link-to-personalize link">
-			<div class="progress-bar {{personalizeColor}} progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-		    	Personalize
-			</div>
-		</div>
-	{{/if}}
-	</div>
-
-	<div class="col-sm-3">
-	{{#if reached_checkout}}
-		<div class="progress link-to-checkout link">
-			<div class="progress-bar {{checkoutColor}} progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-		    	Checkout
-			</div>
-		</div>
-	{{/if}}
-	</div>
-
--->
 </template>
 
 <template name="dashboardHeader">
 	<h1>You have not ordered any hands. Click a button below to begin an order.</h1>
-</template>
-
-<template name="dashboardButton">
-	<a href="{{pathFor 'create'}}" class="btn btn-info btn-lg" role="button">{{text}}</a>
 </template>
