@@ -4,6 +4,9 @@ Template.profileNav.helpers({
 	},
 	checkoutDisabled: function(){
 		return this.reached_checkout ? "link" : "disabled";
+	},
+	order_id:function(){
+		return this._id;
 	}
 });
 
