@@ -20,20 +20,6 @@ Template.photo.helpers({
 	},
 	photos: function(){
 		return Images.find({});
-	},
-	photoAttributes: function(){
-		return {
-			class: "img-responsive user-img",
-			height: 250,
-			width: 250
-		}
-	},
-	userPhoto: function(){
-		var url = this.public_id + ".png";
-		console.log(this);
-		console.log(url);
-		//$.cloudinary.image(url, {radius: 20});
-		return $.cloudinary.image("kaelp1x6dttucjg3mxp0.png");
 	}
 });
 
@@ -59,6 +45,25 @@ Template.photo.events({
     });
   }*/
 });
+
+Template.photoHolder.onRendered(function(){
+	var selector = "#" + this.data._id;
+	var url = this.data.public_id;
+
+	$(selector).append($.cloudinary.image(url, imageDetails));
+});
+
+var imageDetails = {
+	format: 'jpg',
+	/*
+	width: "100%",
+	height: 400,
+	*/
+	radius: "max",
+	class: "uploaded-photo img-responsive",
+	background: "#ffcf2b",
+	border: { width: 5, color: '#fff' }
+};
 
 function addPhoto(order_id){
 	$('.upload-form').unsigned_cloudinary_upload("payouw7z", { 
