@@ -55,11 +55,10 @@ Template.photoHolder.onRendered(function(){
 
 var imageDetails = {
 	format: 'jpg',
-	/*
-	width: "100%",
-	height: 400,
-	*/
+	width: 600,
+	height: 600,
 	radius: "max",
+	crop: 'scale',
 	class: "uploaded-photo img-responsive",
 	background: "#ffcf2b",
 	border: { width: 5, color: '#fff' }
