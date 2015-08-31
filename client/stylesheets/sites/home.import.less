@@ -2,6 +2,7 @@
 // all site depending styles
 
 #home-main {
+
     a {
         .transition-all;
         color: @theme-primary;
@@ -38,23 +39,20 @@
 
 
     // Homepage Header
-
+    
     header {
         position: relative;
         width: 100%;
-        height: 567px;
-        // I added above height
         min-height: auto;
         .background-cover;
-        background-position: center;
-        background-repeat:no-repeat;
-        background-image: url(/header.jpg);
+        //background-position: center;
+        background-image: url('/header2.png');
         text-align: center;
         color: white;
         .header-content {
             position: relative;
             text-align: center;
-            padding: 100px 15px 100px;
+            padding: 150px 15px 100px;
             width: 100%;
             .header-content-inner {
                 h1 {
@@ -75,6 +73,7 @@
             }
         }
         @media (min-width: 768px) {
+            height: 700px;
             min-height: 100%;
             .header-content {
                 position: absolute;
@@ -82,6 +81,7 @@
                 -webkit-transform: translateY(-50%);
                 -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
+                margin-top: 100px;
                 padding: 0 50px;
                 .header-content-inner {
                     max-width: 1000px;
@@ -98,6 +98,7 @@
         }
     }
 
+
     // Sections
 
     .section-heading {
@@ -112,62 +113,6 @@
         }
         p {
             margin-bottom: 0;
-        }
-    }
-
-    .portfolio-box {
-        position: relative;
-        display: block;
-        max-width: 650px;
-        margin: 0 auto;
-        .portfolio-box-caption {
-            color: white;
-            opacity: 0;
-            display: block;
-            background: fade(@theme-primary, 90%);
-            position: absolute;
-            bottom: 0;
-            text-align: center;
-            width: 100%;
-            height: 100%;
-            .transition-all;
-            .portfolio-box-caption-content {
-                width: 100%;
-                text-align: center;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                .project-category,
-                .project-name {
-                    .sans-serif-font;
-                    padding: 0 15px;
-                }
-                .project-category {
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    font-size: 14px;
-                }
-                .project-name {
-                    font-size: 18px;
-                }
-            }
-        }
-        &:hover {
-            .portfolio-box-caption {
-                opacity: 1;
-            }
-        }
-        @media (min-width: 768px) {
-            .portfolio-box-caption {
-                .portfolio-box-caption-content {
-                    .project-category {
-                        font-size: 16px;
-                    }
-                    .project-name {
-                        font-size: 22px;
-                    }
-                }
-            }
         }
     }
 
@@ -234,5 +179,38 @@
 
     body {
         webkit-tap-highlight-color: @theme-dark;
+    }
+
+
+
+
+    .img-center {
+        margin: 0 auto;
+        height: 250px;
+        width: 250px;
+    }
+
+    .scroll-top {
+        z-index: 1049;
+        position: fixed;
+        right: 2%;
+        bottom: 2%;
+        width: 50px;
+        height: 50px;
+        @media (min-width: 768px) {
+            visibility: hidden;
+        }
+    }
+
+    .scroll-top .btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .scroll-top .btn:focus {
+        outline: 0;
     }
 }

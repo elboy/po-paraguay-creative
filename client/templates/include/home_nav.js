@@ -24,6 +24,8 @@ Template.homeNav.events({
 	},
 	'click .page-scroll':function(event) {
         var $anchor = $(event.target);
+        console.log($anchor);
+        console.log($anchor.attr("href"));
         $('html, body').stop().animate({
             scrollTop: ($($anchor.attr('href')).offset().top - 50)
         }, 1250, 'easeInOutExpo');

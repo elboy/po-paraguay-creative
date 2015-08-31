@@ -10,12 +10,17 @@
 @po-pink:               #eb4d99;
 @po-green:              #9ac21f;
 
-@theme-primary: #F05F40;
-@theme-dark: #222;
+@theme-primary: @po-blue;
+@theme-dark: @po-blue;
+//@theme-primary: #F05F40;
+//@theme-dark: #222;
 
 // Global Components
 html,
 body {
+	@media (max-width: 767px) {
+		padding-top: 25px;
+	}
     height: 100%;
     width: 100%;
 }
