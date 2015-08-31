@@ -11,7 +11,7 @@ Template.home.onRendered(function(){
 });
 
 Template.home.events({
-    'click #myBtn': function(){
+    'click .myBtn': function(){
         if (Meteor.user()){
             Router.go("/dashboard");
         } else {

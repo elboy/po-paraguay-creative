@@ -13,26 +13,48 @@
                     <a class="navbar-brand page-scroll" href="#pageTop">Po Paraguay</a>
                 </div>
 
+
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="home-nav-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a class="page-scroll" href="#queHacemos">Que Hacemos?</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#quienesSomos">Quienes Somos?</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#testimonios">Testimonios</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#crearUnaMano">Crear Una Mano</a>
-                        </li>
                         {{#if currentUser}}
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Options <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="page-scroll" href="#crearUnaMano">Crear Una Mano</a>
+                                        
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#queHacemos">Que Hacemos?</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#testimonios">Testimonios</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#quienesSomos">Quienes Somos?</a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li>
                                 <a class="signout link">Logout</a>
                             </li>
                         {{else}}
+                             <li>
+                                <a class="page-scroll" href="#crearUnaMano">Crear Una Mano</a>
+                                
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#queHacemos">Que Hacemos?</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#testimonios">Testimonios</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#quienesSomos">Quienes Somos?</a>
+                            </li>
                             <li>
                                 <a class="signin link">Login</a>
                             </li>
