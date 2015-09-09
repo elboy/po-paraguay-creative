@@ -2,99 +2,75 @@
 	<section class="profile-header" id="dashboard-header">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-3">
-					<i class="fa fa-spinner fa-spin profile-header-icon"></i>
-				</div>
-				<div class="col-xs-9">
-					<h1 class="estado">ESTADO</h1>
-					<h2 class="de-pedidos">de Pedidos</h2>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="bg-blue" id="dashboard-orders">
-		{{#if orderCount}}
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<h2>Orders:</h2>
-					</div>
-					{{#each orders}}
-						{{> order}}
-					{{/each}}
-				</div>
-			</div>
-		{{else}}
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="order">
-							{{> dashboardHeader}}
-						</div>
-					</div>
-				</div>
-			</div>
-		{{/if}}
-	</section>
-
-	<section class="bg-yellow" id="dashboard-create-buttons">
-		<div class="container">
-			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="text-center">Choose case</h2>
-				</div>
-				<div class="col-xs-6 text-center">
-					<a href="{{pathFor 'create'}}" role="button" id="for-me" class="btn btn-circle">
-						<i class="fa fa-hand-paper-o"></i>
-					</a>
-					<br>
-					<div class="button-description">
-						Con movemiento de muneca
-					</div>
-				</div>
-				<div class="col-xs-6 text-center">
-					<a href="{{pathFor 'create'}}" role="button" id="for-someone-else" class="btn btn-circle">
-						<i class="fa fa-hand-paper-o"></i>
-					</a>
-					<br>
-					<div class="button-description">
-						Sin movemiento de muneca
-					</div>
+					<h4>
+						<i class="fa fa-spinner"></i> Bienvenidos {{username}}
+					</h4>
+					<p>Panel de creacion de manos</p>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+			{{#if orderCount}}
+
+				<h2>Pedidos:</h2>
+				{{#each orders}}
+					<div class="alert alert-warning">
+						{{> order}}
+					</div>
+					<hr>
+				{{/each}}
+
+			{{else}}
+
+				<div class="order">
+					{{> dashboardHeader}}
+				</div>
+
+			{{/if}}
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<button type="button" id="link-to-create-hand" class="btn btn-success btn-block">
+					<i class="fa fa-hand-paper-o"></i> Crear Mano
+				</button>
+			</div>
+		</div>
+	</div>
 </template>
 
 <template name="order">
-
-	<div class="col-xs-12">
-		{{name}}
-	</div>
-
-	<div class="col-xs-12">
-		<div class="progress">
-			<div class="progress-bar progress-bar-success link-to-info link" style="width: 25%">
-				<i class="fa fa-info"></i> <span class="hidden-xs">Order Info</span>
-			</div>
-			<div class="progress-bar link-to-photo link {{photoColor}}" style="width: 25%">
-				<i class="fa fa-camera"></i> <span class="hidden-xs">Photo Upload</span>
-			</div>
-		{{#if admin_approval}}
-			<div class="progress-bar link-to-personalize link {{personalizeColor}}" style="width: 25%">
-				<i class="fa fa-hand-peace-o"></i> <span class="hidden-xs">Personalize</span>
-			</div>
-		{{/if}}
-		{{#if reached_checkout}}
-			<div class="progress-bar link-to-checkout link {{checkoutColor}}" style="width: 25%">
-				<i class="fa fa-check"></i> <span class="hidden-xs">Checkout</span>
-			</div>
-		{{/if}}
+	{{name}}
+	<div class="progress">
+		<div class="progress-bar progress-bar-success link-to-info link" style="width: 25%">
+			<i class="fa fa-info"></i> <span class="hidden-xs">Order Info</span>
 		</div>
+		<div class="progress-bar link-to-photo link {{photoColor}}" style="width: 25%">
+			<i class="fa fa-camera"></i> <span class="hidden-xs">Photo Upload</span>
+		</div>
+	{{#if admin_approval}}
+		<div class="progress-bar link-to-personalize link {{personalizeColor}}" style="width: 25%">
+			<i class="fa fa-hand-peace-o"></i> <span class="hidden-xs">Personalize</span>
+		</div>
+	{{/if}}
+	{{#if reached_checkout}}
+		<div class="progress-bar link-to-checkout link {{checkoutColor}}" style="width: 25%">
+			<i class="fa fa-check"></i> <span class="hidden-xs">Checkout</span>
+		</div>
+	{{/if}}
 	</div>
 </template>
 
 <template name="dashboardHeader">
-	<h1>You have not ordered any hands. Click a button below to begin an order.</h1>
+	<p>Adquirir una Po es algo super sencillo, solo tenes que completar tus datos y seguir los pasos que aparecen en la pantalla.
+	</p>
 </template>

@@ -6,6 +6,10 @@ Template.dashboard.helpers({
 	},
 	orderCount: function(){
 		return orders.count();
+	},
+	username: function(){
+		var user = Meteor.user();
+		return user.username;
 	}
 });
 
@@ -25,6 +29,9 @@ Template.dashboard.events({
 	'click .link-to-checkout':function(){
 		var orderId = this._id;
 		Router.go('checkout', {_id: orderId});
+	},
+	'click #link-to-create-hand':function(){
+		Router.go('create');
 	}
 });
 
@@ -39,5 +46,4 @@ Template.order.helpers({
 		return this.order_complete ? "progress-bar-success" : "progress-bar-warning";
 		
 	}
-
 });

@@ -1,5 +1,4 @@
 Template.photo.onRendered(function(){
-	Session.set("case", 0);
 	Session.set("uploading", 0);
 });
 
@@ -7,13 +6,10 @@ Template.photo.helpers({
 	clicked:function(){
 		return Session.get("case");
 	},
-	wristMovement:function(){
-		return Session.get("case") === 1;
-	},
 	// if a photo is uploading, show progress bar
 	hidden:function(){
 		if (Session.get("uploading") === 0){
-			return "hide-remain";
+			return "hide-remove";
 		} else {
 			return "";
 		}
@@ -24,16 +20,19 @@ Template.photo.helpers({
 });
 
 Template.photo.events({
-	'click #wrist-movement': function(){
-		Session.set("case", 1);
-	},
-	'click #no-wrist-movement': function(){
-		Session.set("case", 2);
-	},
 	'click #upload-photo': function(){
 		var order_id = this._id;
 		addPhoto(order_id);
-	}/*,
+	},
+	'click #photo-to-personalize':function(){
+		var orderId = this._id;
+		if (this.admin_approval){
+			Router.go('personalize', {_id: orderId});
+		} else {
+			Router.go('postPhoto', {_id: orderId});
+		}
+	}
+	/*,
   'click .delete':function(){
     // Remove instance from database
     Meteor.call("removeImage", this._id, function(e,r){
@@ -57,11 +56,9 @@ var imageDetails = {
 	format: 'jpg',
 	width: 600,
 	height: 600,
-	radius: "max",
 	crop: 'scale',
-	class: "uploaded-photo img-responsive",
-	background: "#ffcf2b",
-	border: { width: 5, color: '#fff' }
+	class: "img-thumbnail img-rounded img-responsive"
+	//background: "#ffcf2b",
 };
 
 function addPhoto(order_id){

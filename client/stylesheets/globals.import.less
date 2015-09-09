@@ -18,25 +18,17 @@
 // Global Components
 html,
 body {
-	@media (max-width: 767px) {
-		padding-top: 25px;
-	}
+	padding-top: 25px;
     height: 100%;
     width: 100%;
 }
 
+#main {
+    padding-bottom: 25px;
+}
+
 body {
     .serif-font;
-}
-
-hr {
-    border-color: @theme-primary;
-    border-width: 3px;
-    max-width: 50px;
-}
-
-hr.light {
-    border-color: white;
 }
 
 h1,
@@ -52,4 +44,23 @@ p {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
+}
+
+.bg-blue {
+  background-color: @po-blue;
+}
+.bg-orange {
+  background-color: @po-orange;
+}
+.bg-coral {
+  background-color: @po-coral;
+}
+.bg-pink {
+  background-color: @po-pink;
+}
+.bg-green {
+  background-color: @po-green;
+}
+.bg-yellow {
+  background-color: @po-yellow;
 }

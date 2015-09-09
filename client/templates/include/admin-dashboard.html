@@ -1,0 +1,47 @@
+<template name="adminDashboard">
+	<section id="admin-header">
+		<div class="container">
+			<div class="jumbotron">
+				<h2>Admin Page</h2>
+				<p>Have a good day, Po!</p>
+			</div>
+		</div>
+	</section>
+
+	<div class="container">
+		{{#each this}}
+			{{> adminPreOrder}}
+			<hr>
+		{{/each}}
+	</div>
+</template>
+
+<template name="adminPreOrder">
+	{{#if order_complete}}
+		<div class="alert alert-success">
+			Date: {{created_at}}	
+			<br>
+			Order for: <a class="admin-order-item link">{{name}}</a><br>
+			Status: Ordered
+		</div>
+	{{else}}
+		{{#if admin_approval}}
+			<div class="alert alert-warning">
+				Date: {{created_at}}	
+				<br>
+				Order for: <a class="admin-order-item link">{{name}}</a> 
+				<br>
+				Status: Approved
+			</div>
+		{{else}}
+			<div class="alert alert-danger">
+				Date: {{created_at}}
+				<br>
+				Order for: <a class="admin-order-item link">{{name}}</a>
+				<br> 
+				Status: Awaiting Approval
+			</div>
+		{{/if}}
+	{{/if}}
+
+</template>

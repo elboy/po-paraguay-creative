@@ -17,11 +17,16 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="nav-collapse">
                     <ul class="nav navbar-nav navbar-right">
+                    {{#if isInRole 'admin'}}
+                        <li>
+                            <a href="{{pathFor 'admin'}}">Admin</a>
+                        </li>
+                    {{/if}}
                         <li>
                             <a href="{{pathFor route='dashboard'}}">Profile</a>
                         </li>
                         <li>
-                            <a class="signout link">Logout</a>
+                            <a class="signout link">Salir</a>
                         </li>
                     </ul>
                 </div>

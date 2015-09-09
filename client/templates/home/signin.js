@@ -1,24 +1,40 @@
+Template.signIn.onCreated(function() { 
+    Session.set('signinSubmitErrors', {});
+});
+
+Template.signIn.helpers({ 
+    errorMessage: function(field) {
+        return Session.get('signinSubmitErrors')[field]; 
+    },
+    errorClass: function (field) {
+        return !!Session.get('signinSubmitErrors')[field] ? 'has-error' : '';
+    } 
+});
+
 Template.signIn.events({
     'submit #signin-form': function(e, t) {
         e.preventDefault();
 
-        var signInForm = $(e.currentTarget),
-            email = trimInput(signInForm.find('#signin-email').val().toLowerCase()),
-            password = signInForm.find('#signin-password').val();
+        var signInForm = $(e.currentTarget);
+        var user = {
+            username: trimInput(signInForm.find('#signin-username').val().toLowerCase()),
+            password: signInForm.find('#signin-password').val(),
+            passwordConfirm: signInForm.find('#signin-password').val()
+        };
 
-        if (isNotEmpty(email) && isEmail(email) && isNotEmpty(password) && isValidPassword(password)) {
+        var errors = validateUser(user); 
+        if (errors.username || errors.password)
+            return Session.set('signinSubmitErrors', errors);
 
-            Meteor.loginWithPassword(email, password, function(err) {
-                if (err) {
-                    console.log('These credentials are not valid.');
-                } else {
-                    console.log('Welcome back Po User!');
-                    $('#signin-modal').modal('hide');
-                    Router.go('dashboard');
-                }
-            });
-        }
-        return false;
+        Meteor.loginWithPassword(user.username, user.password, function(err) {
+            if (err) {
+                errors = {password: "These credentials are incorrect."};
+                return Session.set('signinSubmitErrors', errors);
+            } else {
+                $('#signin-modal').modal('hide');
+                Router.go('dashboard');
+            }
+        });
     },
     'click #signup-button': function(){
         $("#signup-modal").modal();

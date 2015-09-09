@@ -107,25 +107,23 @@
             }
         }
         @media (min-width: 768px) {
-            visibility: hidden;
             background-color: transparent;
-            border-color: fade(white, 30%);
+            border-color: transparent;
             .navbar-header .navbar-brand {
-                color: fade(white, 70%);
+                color: transparent;
                 &:hover,
                 &:focus {
-                    color: white;
+                    color: transparent;
                 }
             }
             .nav > li > a,
             .nav > li > a:focus {
-                color: fade(white, 70%);
+                color: transparent;
                 &:hover {
-                    color: white;
+                    color: transparent;
                 }
             }
             &.affix {
-                visibility: visible;
                 background-color: white;
                 border-color: fade(@theme-dark, 5%);
                 .navbar-header .navbar-brand {

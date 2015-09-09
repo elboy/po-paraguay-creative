@@ -9,26 +9,28 @@
             <div class="modal-content">
                 <div class="modal-header" style="padding:35px 50px;">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4><i class="fa fa-lock"></i> Sign In</h4>
+                    <h4><i class="fa fa-lock"></i> Iniciar</h4>
                 </div>
 
                 <div class="modal-body" style="padding:40px 50px;">
                 	<button class="btn btn-block btn-social btn-facebook" id="facebook-signin">
-                		<i class="fa fa-facebook"></i> <span class="hidden-xs">Sign in with </span>Facebook
+                		<i class="fa fa-facebook"></i> <span class="hidden-xs">Iniciar con </span>Facebook
                 	</button>
                 	<div class="option-divider">or</div>
 
                         <!-- begin #sign-in-form -->
                         <form role="form" id="signin-form" method="post" onsubmit="window.location.assign('#close')">
-                            <div class="form-group">
-                                <label for="usrname"><i class="fa fa-user"></i> Username</label>
-                                <input type="text" class="form-control" id="signin-email" name="email" placeholder="Email Address">
+                            <div class="form-group {{errorClass 'username'}}">
+                                <label for="usrname"><i class="fa fa-user"></i> Nombre Usuario</label>
+                                <input type="text" class="form-control" id="signin-username" name="username" placeholder="Username">
+                                <span class="help-block">{{errorMessage 'username'}}</span>
                             </div>
-                            <div class="form-group">
-                                <label for="psw"><i class="fa fa-eye"></i> Password</label>
+                            <div class="form-group {{errorClass 'password'}}">
+                                <label for="psw"><i class="fa fa-eye"></i> Contraseña</label>
                                 <input type="password" class="form-control" name="password" id="signin-password" placeholder="Password">
+                                <span class="help-block">{{errorMessage 'password'}}</span>
                             </div>
-                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-power-off"></i> Sign In</button>
+                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-power-off"></i> Entrar</button>
                         </form>
                 </div>
                 

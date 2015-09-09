@@ -1,26 +1,27 @@
 <template name="personalize">
+	{{> profileNav}}
+
 	<section class="profile-header" id="personalize-header">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-3">
-					<i class="fa fa-hand-peace-o profile-header-icon"></i>
+				<div class="col-xs-12">
+					<h4>
+						<i class="fa fa-hand-peace-o"></i> Personalize
+					</h4>
+					<p>Select colors for each part of your hand</p>
 				</div>
-				<div class="col-xs-8 col-xs-offset-1">
-					<h1 class="paso-1-info">PASO 3</h1>
-					<h2 class="datos-personalize">Personalize</h2>
-				</div>
+
 			</div>
 		</div>
 	</section>
 
-
-	{{> profileNav}}
-
-	<section>
-		<div class="container">
-			<div class="row">
-
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<button role="button" class="btn btn-info btn-block link-to-checkout">Continuar</button>
 			</div>
 		</div>
-	</section>
+	</div>
+
+
 </template>
