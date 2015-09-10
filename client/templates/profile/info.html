@@ -34,39 +34,3 @@
 	</div>
 
 </template>
-
-<template name="profileNav">
-	<section class="profile-navbar">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<!-- Single button -->
-					<div class="btn-group">
-						<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Navigate <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li class="link-to-dashboard link">
-								<a href="{{pathFor 'dashboard'}}"><i class="fa fa-user fa-fw"></i> Profile</a>
-							</li>
-							<li role="separator" class="divider"></li>
-							<li class="link-to-info link">
-								<a><i class="fa fa-info fa-fw"></i> Order Info </a>
-							</li>
-							<li class="link-to-photo link">
-								<a><i class="fa fa-camera fa-fw"></i> Photo Upload</a>
-							</li>
-							<li class="link-to-personalize {{personalizeDisabled}}">
-								<a><i class="fa fa-hand-peace-o fa-fw"></i> Personalize</a>
-							</li>
-							<li role="separator" class="divider"></li>
-							<li class="link-to-checkout {{checkoutDisabled}}">
-								<a><i class="fa fa-check fa-fw"></i> Checkout</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-</template>

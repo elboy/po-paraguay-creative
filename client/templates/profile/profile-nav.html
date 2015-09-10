@@ -1,0 +1,51 @@
+<template name="profileNav">
+	<section class="steps-left">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="board-inner">
+					<ul class="nav nav-tabs" id="myTab">
+						<!--<div class="liner"></div>-->
+						<li>
+							<a class="link-to-dashboard">
+								<span class="round-tabs one">
+									<i class="fa fa-user"></i>
+                      			</span> 
+                  			</a>
+                  		</li>
+                  		<li class="active">
+                  			<a class="link-to-info">
+                    			<span class="round-tabs two">
+                        			<i class="fa fa-info"></i>
+                    			</span> 
+							</a>
+						</li>
+						<li>
+							<a class="link-to-photo">
+								<span class="round-tabs three">
+									<i class="fa fa-camera"></i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="link-to-personalize {{personalizeDisabled}}">
+								<span class="round-tabs four">
+									<i class="fa fa-hand-peace-o"></i>
+								</span> 
+							</a>
+						</li>
+						<li>
+							<a class="link-to-checkout {{checkoutDisabled}}">
+								<span class="round-tabs five">
+									<i class="fa fa-check"></i>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+
+</template>

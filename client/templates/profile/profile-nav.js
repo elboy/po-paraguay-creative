@@ -1,10 +1,3 @@
-Template.info.events({
-	'click .link-to-photo':function(){
-		var orderId = this._id;
-		Router.go('photo', {_id: orderId});
-	}
-})
-
 Template.profileNav.helpers({
 	personalizeDisabled: function(){
 		return this.admin_approval ? "link" : "disabled";
@@ -18,6 +11,9 @@ Template.profileNav.helpers({
 });
 
 Template.profileNav.events({
+	'click .link-to-dashboard':function(){
+		Router.go('dashboard');
+	},
 	'click .link-to-info':function(){
 		var orderId = this._id;
 		Router.go('info', {_id: orderId});
@@ -39,4 +35,3 @@ Template.profileNav.events({
 		}
 	}
 });
-

@@ -47,7 +47,8 @@ Template.signUp.events({
     'click #facebook-signup': function(){
         Meteor.loginWithFacebook(function(err){
             if (err) {
-                console.log("Error in loginWithFacebook in signup");
+                var errors = {username: "Error in loginWithFacebook in signup."};
+                return Session.set('signupSubmitErrors', errors);
             } else {
                 console.log('Congrats new Meteorite, you\'re in!');
                 $('#signup-modal').modal('hide');
