@@ -1,3 +1,7 @@
+Template.dashboard.onCreated(function(){
+	Session.set("tab", "tab-dashboard");
+});
+
 orders = Orders.find({}, {sort: {created_at: -1}});
 
 Template.dashboard.helpers({

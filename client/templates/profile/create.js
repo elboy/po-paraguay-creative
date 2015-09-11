@@ -1,5 +1,6 @@
 Template.create.onCreated(function() { 
 	Session.set('orderSubmitErrors', {});
+	Session.set("tab", "tab-info");
 });
 
 Template.create.helpers({ 
@@ -8,7 +9,7 @@ Template.create.helpers({
 	},
 	errorClass: function (field) {
 		return !!Session.get('orderSubmitErrors')[field] ? 'has-error' : '';
-	} 
+	}
 });
 
 Template.create.events({

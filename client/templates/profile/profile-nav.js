@@ -1,3 +1,10 @@
+Template.profileNav.onRendered(function(){
+
+	$(".nav-tabs li").removeClass("active");
+	var active = "li." + Session.get("tab");
+	$(active).addClass('active');
+});
+
 Template.profileNav.helpers({
 	personalizeDisabled: function(){
 		return this.admin_approval ? "link" : "disabled";
@@ -11,27 +18,38 @@ Template.profileNav.helpers({
 });
 
 Template.profileNav.events({
-	'click .link-to-dashboard':function(){
+	'click .tab-to-dashboard':function(){
 		Router.go('dashboard');
 	},
-	'click .link-to-info':function(){
+	'click .tab-to-info':function(){
 		var orderId = this._id;
-		Router.go('info', {_id: orderId});
-	},
-	'click .link-to-photo':function(){
-		var orderId = this._id;
-		Router.go('photo', {_id: orderId});
-	},
-	'click .link-to-personalize':function(){
-		if (this.admin_approval){
-			var orderId = this._id;
-			Router.go('personalize', {_id: orderId});
+		if (orderId){
+			Router.go('info', {_id: orderId});
+			//$(".nav-tabs li").removeClass("active");
+			//$(e.currentTarget).addClass('active');
 		}
 	},
-	'click .link-to-checkout':function(){
-		if (this.reached_checkout){
-			var orderId = this._id;
-			Router.go('checkout', {_id: orderId});
+	'click .tab-to-photo':function(){
+		var orderId = this._id;
+		if (orderId){
+			Router.go('photo', {_id: orderId});
+		}
+	},
+	'click .tab-to-personalize':function(){
+
+		var orderId = this._id;
+		if (orderId){
+			if (this.admin_approval){
+				Router.go('personalize', {_id: orderId});
+			}
+		}
+	},
+	'click .tab-to-checkout':function(){
+		var orderId = this._id;
+		if (orderId){
+			if (this.reached_checkout){
+				Router.go('checkout', {_id: orderId});
+			}
 		}
 	}
 });

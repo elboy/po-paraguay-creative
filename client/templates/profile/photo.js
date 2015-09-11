@@ -1,5 +1,6 @@
-Template.photo.onRendered(function(){
+Template.photo.onCreated(function(){
 	Session.set("uploading", 0);
+	Session.set("tab", "tab-photo");
 });
 
 Template.photo.helpers({

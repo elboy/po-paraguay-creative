@@ -1,10 +1,13 @@
 <template name="dashboard">
+
+	{{> profileNav}}
+
 	<section class="profile-header" id="dashboard-header">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 					<h4>
-						<i class="fa fa-spinner"></i> Bienvenidos {{username}}
+						<i class="fa fa-user"></i> Bienvenidos {{username}}
 					</h4>
 					<p>Panel de creacion de manos</p>
 				</div>
@@ -17,11 +20,10 @@
 			<div class="col-xs-12">
 			{{#if orderCount}}
 
-				<h2>Pedidos:</h2>
 				{{#each orders}}
-					<div class="alert alert-warning">
+					<div class="panel panel-info">
 						{{> order}}
-					</div>
+    				</div>
 					<hr>
 				{{/each}}
 
@@ -49,24 +51,28 @@
 </template>
 
 <template name="order">
-	{{name}}
-	<div class="progress">
-		<div class="progress-bar progress-bar-success link-to-info link" style="width: 25%">
-			<i class="fa fa-info"></i> <span class="hidden-xs">Order Info</span>
+	<div class="panel-heading">{{name}}</div>
+	<div class="panel-body">
+
+		<div class="progress">
+			<div class="progress-bar progress-bar-success link-to-info link" style="width: 25%">
+				<i class="fa fa-info"></i> <span class="hidden-xs">Order Info</span>
+			</div>
+			<div class="progress-bar link-to-photo link {{photoColor}}" style="width: 25%">
+				<i class="fa fa-camera"></i> <span class="hidden-xs">Photo Upload</span>
+			</div>
+		{{#if admin_approval}}
+			<div class="progress-bar link-to-personalize link {{personalizeColor}}" style="width: 25%">
+				<i class="fa fa-hand-peace-o"></i> <span class="hidden-xs">Personalize</span>
+			</div>
+		{{/if}}
+		{{#if reached_checkout}}
+			<div class="progress-bar link-to-checkout link {{checkoutColor}}" style="width: 25%">
+				<i class="fa fa-check"></i> <span class="hidden-xs">Checkout</span>
+			</div>
+		{{/if}}
 		</div>
-		<div class="progress-bar link-to-photo link {{photoColor}}" style="width: 25%">
-			<i class="fa fa-camera"></i> <span class="hidden-xs">Photo Upload</span>
-		</div>
-	{{#if admin_approval}}
-		<div class="progress-bar link-to-personalize link {{personalizeColor}}" style="width: 25%">
-			<i class="fa fa-hand-peace-o"></i> <span class="hidden-xs">Personalize</span>
-		</div>
-	{{/if}}
-	{{#if reached_checkout}}
-		<div class="progress-bar link-to-checkout link {{checkoutColor}}" style="width: 25%">
-			<i class="fa fa-check"></i> <span class="hidden-xs">Checkout</span>
-		</div>
-	{{/if}}
+
 	</div>
 </template>
 

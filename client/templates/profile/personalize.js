@@ -1,3 +1,8 @@
+Template.personalize.onCreated(function(){
+	Session.set("tab", "tab-personalize");
+	console.log("in on created in personalize");
+});
+
 Template.personalize.helpers({
 	
 });

@@ -10,7 +10,7 @@
 		margin: 60px auto;
 		height: 500px;
 		background: #fff;
-		/*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
+		/*box-shadow: 10px 10px #ccc,-10px 20px @po-blue;*/
 		}
 		.board .nav-tabs {
 		    position: relative;
@@ -23,7 +23,7 @@
 		}
 
 		.board > div.board-inner{
-		    background: #fafafa url(http://subtlepatterns.com/patterns/geometry2.png);
+			// background-image here
 		    background-size: 30%;
 		}
 
@@ -34,7 +34,7 @@
 
 		.liner{
 		    height: 2px;
-		    background: #ddd;
+		    background: @po-blue;
 		    position: absolute;
 		    width: 80%;
 		    margin: 0 auto;
@@ -67,53 +67,34 @@
 		}
 
 		span.round-tabs.one{
-		    color: rgb(34, 194, 34);border: 2px solid rgb(34, 194, 34);
-		}
-
-		li.active span.round-tabs.one{
-		    background: #fff !important;
-		    border: 2px solid #ddd;
-		    color: rgb(34, 194, 34);
-		}
-
-		span.round-tabs.two{
-		    color: #febe29;border: 2px solid #febe29;
-		}
-
-		li.active span.round-tabs.two{
-		    background: #fff !important;
-		    border: 2px solid #ddd;
-		    color: #febe29;
-		}
-
-		span.round-tabs.three{
-		    color: #3e5e9a;border: 2px solid #3e5e9a;
-		}
-
-		li.active span.round-tabs.three{
-		    background: #fff !important;
-		    border: 2px solid #ddd;
-		    color: #3e5e9a;
-		}
-
-		span.round-tabs.four{
-		    color: #f1685e;border: 2px solid #f1685e;
-		}
-
-		li.active span.round-tabs.four{
-		    background: #fff !important;
-		    border: 2px solid #ddd;
-		    color: #f1685e;
-		}
-
-		span.round-tabs.five{
 		    color: #999;border: 2px solid #999;
 		}
 
-		li.active span.round-tabs.five{
+		// Active tab is po-blue
+		li.active span.round-tabs{
 		    background: #fff !important;
-		    border: 2px solid #ddd;
-		    color: #999;
+		    border: 2px solid @po-blue;
+		    color: @po-blue;
+		}
+
+		span.round-tabs.two{
+		    color: #febe29;
+		    border: 2px solid #febe29;
+		}
+
+		span.round-tabs.three{
+		    color: #3e5e9a;
+		    border: 2px solid #3e5e9a;
+		}
+
+		span.round-tabs.four{
+		    color: #f1685e;
+		    border: 2px solid #f1685e;
+		}
+
+		span.round-tabs.five{
+		    color: rgb(34, 194, 34);
+		    border: 2px solid rgb(34, 194, 34);
 		}
 
 		.nav-tabs > li.active > a span.round-tabs{
@@ -142,7 +123,7 @@
 		    margin: 0 auto;
 		    bottom: 0px;
 		    border: 5px solid transparent;
-		    border-bottom-color: #ddd;
+		    border-bottom-color: @po-blue;
 		    transition:0.1s ease-in-out;
 		    
 		}
@@ -154,7 +135,7 @@
 		    margin: 0 auto;
 		    bottom: 0px;
 		    border: 10px solid transparent;
-		    border-bottom-color: #ddd;
+		    border-bottom-color: @po-blue;
 		    
 		}
 		.nav-tabs > li a{
@@ -218,8 +199,42 @@
 		    }
 
 		}
+   	}
+
+   	#info-content {
+		.user-row {
+		    margin-bottom: 14px;
+		}
+
+		.user-row:last-child {
+		    margin-bottom: 0;
+		}
+
+		.dropdown-user {
+		    margin: 13px 0;
+		    padding: 5px;
+		    height: 100%;
+		}
+
+		.dropdown-user:hover {
+		    cursor: pointer;
+		}
+
+		.table-user-information > tbody > tr {
+		    border-top: 1px solid rgb(221, 221, 221);
+		}
+
+		.table-user-information > tbody > tr:first-child {
+		    border-top: 0;
+		}
 
 
+		.table-user-information > tbody > tr > td {
+		    border-top: 0;
+		}
+		.toppad{
+			margin-top:20px;
+		}
    	}
 	
 
@@ -228,8 +243,12 @@
 	.profile-header {
 		background-color: #F4FAFF;
 		text-align: center;
-    	padding: 10px 0 10px 0;
-    	margin-bottom: 20px;
+		color: @po-blue;
+		font-weight: 300;
+
+		padding: 15px 0 5px 0;
+		margin-bottom: 20px;
+
    	}
 
    	.photo-upload-btn {
