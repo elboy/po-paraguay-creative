@@ -1,83 +1,65 @@
 <template name="photo">
-	{{> profileNav}}
-
-	<section class="profile-header" id="photo-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h4>
-						<i class="fa fa-camera"></i> Subir Photo
-					</h4>
-					<p>Panel de creacion de manos</p>
+	<div class="panel-group" id="accordion">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Paso 1</a>
+				</h4>
 				</div>
-
-			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<div class="panel-group" id="accordion">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-    					<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Paso 1</a>
-    				</h4>
-  				</div>
-				<div id="collapse1" class="panel-collapse collapse in">
-					<div class="panel-body">
-						<p>Consigue un boligrafo, una regla y una camara.</p>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-    					<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Paso 2</a>
-    				</h4>
-  				</div>
-				<div id="collapse2" class="panel-collapse collapse">
-					<div class="panel-body">
-						<p>Traza una linea en tu munheca y otra en la mitad del antebrazo  de ambos lados. </p>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-    					<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Paso 3</a>
-    				</h4>
-  				</div>
-				<div id="collapse3" class="panel-collapse collapse">
-					<div class="panel-body">
-						<p>Coloca la cinta metrica entre ambos brazos y toma una fotografia directamente desde arriba como te muestra el ejemplo.</p>
-					</div>
+			<div id="collapse1" class="panel-collapse collapse in">
+				<div class="panel-body">
+					<p>Consigue un boligrafo, una regla y una camara.</p>
 				</div>
 			</div>
 		</div>
-
-		<hr>
-
-		<div class="photo-upload-btn">
-			<div class='upload-form'>
-				<div class="fileUpload btn btn-danger">
-				    <span>Subir Foto</span>
-				    <input name="file" type="file" class="upload-field cloudinary-fileupload" id="upload-photo"/>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Paso 2</a>
+				</h4>
+				</div>
+			<div id="collapse2" class="panel-collapse collapse">
+				<div class="panel-body">
+					<p>Traza una linea en tu munheca y otra en la mitad del antebrazo  de ambos lados. </p>
 				</div>
 			</div>
 		</div>
-
-		<div class="alert alert-warning {{hidden}}">
-			<strong>Cargando!</strong> Espere un momento.
-			<br>
-			<div class="progress">
-				<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:2%"> %
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Paso 3</a>
+				</h4>
+				</div>
+			<div id="collapse3" class="panel-collapse collapse">
+				<div class="panel-body">
+					<p>Coloca la cinta metrica entre ambos brazos y toma una fotografia directamente desde arriba como te muestra el ejemplo.</p>
 				</div>
 			</div>
 		</div>
-
 	</div>
 
-	<div class="container" id="photo-uploads">
+	<hr>
+
+	<div class="photo-upload-btn">
+		<div class='upload-form'>
+			<div class="fileUpload btn btn-danger">
+			    <span>Subir Foto</span>
+			    <input name="file" type="file" class="upload-field cloudinary-fileupload" id="upload-photo"/>
+			</div>
+		</div>
+	</div>
+
+	<div class="alert alert-warning {{hidden}}">
+		<strong>Cargando!</strong> Espere un momento.
+		<br>
+		<div class="progress">
+			<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:2%"> %
+			</div>
+		</div>
+	</div>
+
+
+	<div id="photo-uploads">
 		<div class="row">
 			{{#each photos}}
 			<div class="col-xs-6 col-sm-4">
@@ -88,13 +70,16 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<button role="button" class="btn btn-info btn-block" id="photo-to-personalize">Continuar</button>
-			</div>
+	<div class="row">
+		<div class="col-sm-12">
+			{{#if photocount}}
+				<button role="button" class="btn btn-info btn-block to-personalize-step">Continuar</button>
+			{{else}}
+				Upload photo to continue...
+			{{/if}}
 		</div>
 	</div>
+
 
 </template>
 

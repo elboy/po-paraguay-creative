@@ -1,12 +1,8 @@
 Template.photo.onCreated(function(){
 	Session.set("uploading", 0);
-	Session.set("tab", "tab-photo");
 });
 
 Template.photo.helpers({
-	clicked:function(){
-		return Session.get("case");
-	},
 	// if a photo is uploading, show progress bar
 	hidden:function(){
 		if (Session.get("uploading") === 0){
@@ -17,6 +13,9 @@ Template.photo.helpers({
 	},
 	photos: function(){
 		return Images.find({});
+	},
+	photocount: function(){
+		return Images.find({}).count();
 	}
 });
 
@@ -24,14 +23,6 @@ Template.photo.events({
 	'click #upload-photo': function(){
 		var order_id = this._id;
 		addPhoto(order_id);
-	},
-	'click #photo-to-personalize':function(){
-		var orderId = this._id;
-		if (this.admin_approval){
-			Router.go('personalize', {_id: orderId});
-		} else {
-			Router.go('postPhoto', {_id: orderId});
-		}
 	}
 	/*,
   'click .delete':function(){

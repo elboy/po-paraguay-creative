@@ -1,40 +1,28 @@
 <template name="info">
 
-	{{> profileNav}}
+	<div class="panel panel-info">
+		<div class="panel-heading"><strong>{{name}}</strong></div>
+		<div class="panel-body">
+			Nombre: {{name}}
+			<hr>
+			Dirección: {{address}}
+			<hr>
+			Fecha de nacamiento: {{birthday}}
+			<hr>
+			Numero de teléfono: {{phone}}
+			<hr>
 
-	<section class="profile-header" id="info-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h4>
-						<i class="fa fa-info"></i> Datos Personales
-					</h4>
-					<p>Informacion de Pedido</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="info-content">
-		<div class="container">
-			<div class="panel panel-info">
-				<div class="panel-heading">{{name}}</div>
-				<div class="panel-body">
-					Nombre: {{name}}
-					<hr>
-					Dirección: {{address}}
-					<hr>
-					Fecha de nacamiento: {{birthday}}
-					<hr>
-					Numero de teléfono: {{phone}}
-
-				</div>
-				<div class="panel-footer">
-					<button role="button" class="btn btn-info btn-block link-to-photo">Continuar</button>
-				</div>
-			</div>
+			<button role="button" class="btn btn-info btn-block to-photo-step">Continuar</button>
 
 		</div>
-	</section>
+
+		<!--
+		<div class="panel-footer">
+			<button role="button" class="btn btn-info btn-block to-photo-step">Continuar</button>
+		</div>
+	-->
+	</div>
+
+
 
 </template>

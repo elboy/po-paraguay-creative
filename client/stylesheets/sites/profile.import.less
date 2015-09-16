@@ -273,4 +273,187 @@
    		width: 300px;
    		height: auto;
    	}
+
+
+
+
+   	#flow-wrapper {
+   		ol {
+   			list-style-type: none;
+   			padding: 0;
+   			margin: 0;
+   		}
+
+   		.flowlist .section .flow-title {
+		  width: 100%;
+		  border-top: 1px solid #ececec;
+		  position: relative;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  -webkit-user-select: none;
+		  -o-user-select: none;
+		  user-select: none;
+		}
+		.flowlist .section .flow-title:after {
+		  content: '';
+		  display: table;
+		  clear: both;
+		}
+
+		.flowlist .section.allow:not(.active) .flow-title {
+		  cursor: pointer;
+		}
+
+		/* Using .no-touch since touch devices emulate hover, thereby making steps look active that are not */
+		.no-touch .flowlist .section.allow:not(.active) .flow-title:hover {
+		  background-color: #f4f4f4;
+		}
+
+		.flowlist .section.active .flow-title {
+		  border-bottom: 1px solid #ececec;
+		}
+
+		.flowlist .section .flow-title a {
+		  display: none;
+		}
+
+		.flowlist .section.allow:not(.active) .flow-title a {
+		  display: block;
+		  float: right;
+		  line-height: 40px;
+		  height: 40px;
+		  padding: 0px 10px;
+		  // I added
+		  color: #ed1c24;
+		  // I added
+		  text-decoration: none;
+		}
+
+		// I added
+		.flowlist .section:not(.active) .step {
+		  display: none;
+		}
+
+
+		.no-touch .flowlist .section .flow-title a:hover {
+		  text-decoration: none;
+		}
+
+		.flowlist .section .flow-title .flow-number,
+		.flowlist .section.allow.active .flow-title .flow-number,
+		.no-touch .flowlist .section.allow:hover .flow-title .flow-number {
+		  width: 26px;
+		  height: 26px;
+		  text-align: center;
+		  color: #FFFFFF;
+		  line-height: 26px;
+		  background-color: #ed1c24;
+		  display: block;
+		  position: absolute;
+		  top: 50%;
+		  left: 10px;
+		  margin-top: -13px;
+		}
+
+		.flowlist .section.allow .flow-title .flow-number {
+		  background-color: #99cce5;
+		}
+
+		.flowlist .section.allow .flow-title h2 {
+		  color: #a0a0a0;
+		}
+
+		.flowlist .section.allow .flow-title:hover h2,
+		.flowlist .section.active .flow-title h2 {
+		  color: #ed1c24;
+		}
+
+		.flowlist .section .flow-title h2 {
+		  font-size: 16px;
+		  font-weight: 400;
+		  line-height: 40px;
+		  height: 40px;
+		  float: left;
+		  // I added
+		  text-transform: uppercase;
+		  margin: 0px 4px 0px 45px;
+		}
+
+		.flowlist .section .step {
+		  padding: 20px;
+		}
+		.flowlist .section .step:after {
+		  content: '';
+		  display: table;
+		  clear: both;
+		}
+		@media only screen and (max-width: 979px) {
+		  .flowlist .section .step {
+		    padding: 10px;
+		  }
+		}
+
+		.flowlist select {
+		  // took out this part
+		  //max-width: 365px;
+		  width: 100%;
+		}
+
+		.flowlist h3 {
+		  font-weight: 500;
+		}
+
+		.flowlist .buttons-set {
+		  text-align: left;
+		}
+		.flowlist .buttons-set button.button {
+		  float: left;
+		  margin-left: 0;
+		  margin-right: 10px;
+		  margin-bottom: 0;
+		}
+		.flowlist .buttons-set p.required {
+		  float: right;
+		  margin-left: 5px;
+		  margin-bottom: 0;
+		}
+		.flowlist .buttons-set .back-link {
+		  float: right;
+		  margin: 0;
+		}
+		.flowlist .buttons-set a {
+		  line-height: 20px;
+		  display: inline-block;
+		  padding: 5px 5px 5px 0;
+		}
+
+		@media only screen and (max-width: 479px) {
+		  .flowlist .buttons-set .button + .buttons-set .button,
+		  .paypal-express-review .buttons-set .button + .buttons-set .button {
+		    margin-left: 0;
+		  }
+		}
+		.flowlist #flowlist-login .step {
+		  padding: 0px;
+		}
+		.flowlist #flowlist-login .buttons-set {
+		  border-top: 0;
+		  padding-top: 5px;
+		}
+
+		@media only screen and (max-width: 770px) {
+		  .flowlist #flowlist-login .description,
+		  .flowlist #flowlist-login p.required {
+		    display: none;
+		  }
+		}
+		#flowlist-payment .note {
+		  padding: 10px;
+		}
+	}
+
+
+
+
+
 }

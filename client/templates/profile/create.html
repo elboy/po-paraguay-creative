@@ -1,50 +1,27 @@
 <template name="create">
-
-	{{> profileNav}}
-
-	<section class="profile-header" id="create-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h4>
-						<i class="fa fa-clipboard"></i> Datos Personales
-					</h4>
-					<p>Panel de creacion de manos</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<div class="order-form">	
-			<form class="form-horizontal" role="form">
+	<div class="panel panel-info">
+		<div class="panel-heading"><strong>Create</strong></div>
+		<div class="panel-body">	
+			<form role="form" id="create-form">
 				<div class="form-group {{errorClass 'name'}} has-feedback">
-					<div class="col-xs-12">
 						<input class="form-control" type="text" name="name" placeholder="Nombre de usuario" maxlength="30">
 						<i class="fa fa-user form-control-feedback"></i>
 						<span class="help-block">{{errorMessage 'name'}}</span>
-					</div>
 				</div>
 				<div class="form-group {{errorClass 'birthday'}} has-feedback">
-					<div class="col-xs-12">
 						<input class="form-control" type="text" name="birthday" placeholder="Fecha de nacamiento" maxlength="10">
 						<i class="fa fa-calendar form-control-feedback"></i>
 						<span class="help-block">{{errorMessage 'birthday'}}</span>
-					</div>
 				</div>
 				<div class="form-group {{errorClass 'address'}} has-feedback">
-					<div class="col-xs-12">
 						<input class="form-control" type="text" name="address" placeholder="Dirección de delivery" maxlength="50">
 						<i class="fa fa-location-arrow form-control-feedback"></i>
 						<span class="help-block">{{errorMessage 'address'}}</span>
-					</div>
 				</div>
 				<div class="form-group {{errorClass 'phone'}} has-feedback">
-					<div class="col-xs-12">
 						<input class="form-control" type="text" id="desc" name="phone" placeholder="Numero de telefono">
 						<i class="fa fa-phone form-control-feedback"></i>
 						<span class="help-block">{{errorMessage 'phone'}}</span>
-					</div>
 				</div>
 
 				<input type="submit" class="btn btn-info btn-block" value="Add Order">

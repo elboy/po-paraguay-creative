@@ -1,28 +1,56 @@
 <template name="personalize">
+	<div class="panel panel-info">
+		<div class="panel-heading"><strong>Personalize</strong></div>
+		<div class="panel-body">
+			{{colors}}
 
-	{{> profileNav}}
-
-	<section class="profile-header" id="personalize-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h4>
-						<i class="fa fa-hand-peace-o"></i> Personalize
-					</h4>
-					<p>Select colors for each part of your hand</p>
+			<form role="form" id="personalize-form">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="select-wrist">Select Wrist Color:</label>
+					<select class="form-control select-color" id="select-wrist">
+						<option>Red</option>
+						<option>Orange</option>
+						<option>Yellow</option>
+						<option>Blue</option>
+						<option>Indigo</option>
+						<option>Violet</option>
+					</select>
 				</div>
-
+				<div class="form-group">
+					<label for="select-hand">Select Hand Color:</label>
+					<select class="form-control select-color" id="select-hand">
+						<option>Red</option>
+						<option>Orange</option>
+						<option>Yellow</option>
+						<option>Blue</option>
+						<option>Indigo</option>
+						<option>Violet</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="select-fingers">Select Fingers Color:</label>
+					<select class="form-control select-color" id="select-fingers">
+						<option>Red</option>
+						<option>Orange</option>
+						<option>Yellow</option>
+						<option>Blue</option>
+						<option>Indigo</option>
+						<option>Violet</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="addons">Special Requests:</label>
+					<textarea class="form-control" rows="3" id="addons" placeholder="You can make special requests here."></textarea>
+				</div>
 			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<button role="button" class="btn btn-info btn-block personalize-to-checkout">Continuar</button>
+			<div class="col-sm-6">
+				<img class="img-responsive img-rounded" src="{{colors}}">
 			</div>
+				<input type="submit" class="btn btn-info btn-block" value="Continue">
+
+			</form>
 		</div>
+
 	</div>
-
-
 </template>

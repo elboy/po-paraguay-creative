@@ -1,5 +1,4 @@
-Template.checkout.onCreated(function(){
-	Session.set("tab", "tab-checkout");
+Template.checkout.onRendered(function(){
 });
 
 Template.checkout.helpers({
