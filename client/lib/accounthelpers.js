@@ -6,7 +6,7 @@ isNotEmpty = function(value) {
     if (value && value !== ''){
         return true;
     }
-    console.log('Please fill in all required fields.');
+    //console.log('Please fill in all required fields.');
     return false;
 };
 
@@ -15,24 +15,32 @@ isEmail = function(value) {
     if (filter.test(value)) {
         return true;
     }
-    console.log('Please enter a valid email address.');
+    //console.log('Please enter a valid email address.');
     return false;
 };
 
+isUsername = function(value) {
+    if (value.length < 6) {
+        //console.log('Username should be 6 characters or longer.');
+        return false;
+    }
+    return true;
+}
+
 isValidPassword = function(password) {
     if (password.length < 6) {
-        console.log('Your password should be 6 characters or longer.');
+        //console.log('Your password should be 6 characters or longer.');
         return false;
     }
     return true;
 };
 
 areValidPasswords = function(password, confirm) {
-    if (!isValidPassword(password)) {
-        return false;
-    }
+    //if (!isValidPassword(password)) {
+    //    return false;
+    //}
     if (password !== confirm) {
-        console.log('Your two passwords are not equivalent.');
+        //console.log('Your two passwords are not equivalent.');
         return false;
     }
     return true;

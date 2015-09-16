@@ -1,181 +1,104 @@
 <template name="photo">
 	{{> profileNav}}
 
-	<section id="photo-instructions">
+	<section class="profile-header" id="photo-header">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="text-center">Choose case</h2>
+					<h4>
+						<i class="fa fa-camera"></i> Subir Photo
+					</h4>
+					<p>Panel de creacion de manos</p>
 				</div>
-				<div class="col-sm-6 text-center">
-					<button id="wrist-movement" type="button" class="btn btn-info btn-lg">Wrist Movement</button>
-				</div>
-				<div class="col-sm-6 text-center">
-					<button id="no-wrist-movement" type="button" class="btn btn-info btn-lg">No Wrist Movement</button>
-				</div>
-			</div>
-		</div>
 
-	{{#if clicked}}
-		<div class="container">
-			<div class="row">
-			{{#if wristMovement}}
-				<div class="col-sm-6">
-					<p>Icon of wrist movement here.</p>
-				</div>
-				<div class="col-sm-6">
-					<p>Consigue un boligrafo, una regla y una camara.
-					</p>
-					<p>Traza una linea en tu munheca y otra en la mitad del antebrazo  de ambos lados. 
-					</p>
-					<p>Coloca la cinta metrica entre ambos brazos y toma una fotografia directamente desde arriba como te muestra el ejemplo.
-					</p>
-				</div>
-			{{else}}
-				<div class="col-sm-6">
-					<p>Icon of no wrist movement here.</p>
-				</div>
-				<div class="col-sm-6">
-					<p>Consigue un boligrafo, una regla y una camara.
-					</p>
-					<p>Traza una linea en tu munheca y otra en la mitad del antebrazo  de ambos lados. 
-					</p>
-					<p>Coloca la cinta metrica entre ambos brazos y toma una fotografia directamente desde arriba como te muestra el ejemplo.
-					</p>
-				</div>
-			{{/if}}
-			</div>
-		</div>
-	{{/if}}
-	</section>
-
-{{#if clicked}}
-	<section id="photo-uploads">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2 class="text-center">Your photos</h2>
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-6">
-					Photo here
-				</div>
-				<div class="col-xs-6">
-					Photo here
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-6">
-					<button id="photo-upload-btn" type="button" class="btn btn-info btn-lg">Upload Photo</button>
-				</div>
-				<div class="col-xs-6">
-					<a href="{{pathFor 'personalize'}}" class="btn btn-info btn-lg" role="button">Continue</a>
-				</div>
 			</div>
 		</div>
 	</section>
-{{/if}}
 
-</template>
-
-
-<!--
-
-<template name="photoFlow">
-
-	<section class="profile success" id="photo-flow-description">
-		<div class="container">
-			<h1 class="text-center">How to upload a photo</h1>
-			<div class="row">
-				<div class="col-sm-8">
-					<p>Consigue un boligrafo, una regla y una camara.
-					</p>
-					<p>Traza una linea en tu munheca y otra en la mitad del antebrazo  de ambos lados. 
-					</p>
-					<p>Coloca la cinta metrica entre ambos brazos y toma una fotografia directamente desde arriba como te muestra el ejemplo.
-					</p>
+	<div class="container">
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+    					<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Paso 1</a>
+    				</h4>
+  				</div>
+				<div id="collapse1" class="panel-collapse collapse in">
+					<div class="panel-body">
+						<p>Consigue un boligrafo, una regla y una camara.</p>
+					</div>
 				</div>
-				<div class="col-sm-4">
-					<div class="demo-photo">
-						<img src="/po_photo_flow.png" class="img-responsive img-rounded">
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+    					<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Paso 2</a>
+    				</h4>
+  				</div>
+				<div id="collapse2" class="panel-collapse collapse">
+					<div class="panel-body">
+						<p>Traza una linea en tu munheca y otra en la mitad del antebrazo  de ambos lados. </p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+    					<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Paso 3</a>
+    				</h4>
+  				</div>
+				<div id="collapse3" class="panel-collapse collapse">
+					<div class="panel-body">
+						<p>Coloca la cinta metrica entre ambos brazos y toma una fotografia directamente desde arriba como te muestra el ejemplo.</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
 
-	<section class="profile" id="photo-flow-upload">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class='upload-form'>
-						<span class="btn btn-danger btn-file">
-			    			<span class="fa fa-camera">
-							</span>
-							Upload a photo! 
-							<input name="file" type="file" class='upload-field cloudinary-fileupload' id="upload-photo">
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12">
-					{{#if uploading}}
-						<div class="progress">
-							<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
-							  aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">Loading
-							</div>
-						</div>
-					{{/if}}
+		<hr>
+
+		<div class="photo-upload-btn">
+			<div class='upload-form'>
+				<div class="fileUpload btn btn-danger">
+				    <span>Subir Foto</span>
+				    <input name="file" type="file" class="upload-field cloudinary-fileupload" id="upload-photo"/>
 				</div>
 			</div>
 		</div>
-	</section>
 
-	<section class="profile success" id="photo-flow-photos">
-		<div class="container">
-			<h3>Saved images</h3>
-			<div class="row">
-				{{#each photos}}
-						<div class="col-lg-4 col-sm-6 col-md-6">
-							{{> photo}}
-						</div>
-		    	{{/each}}
-	    	</div>
-	    </div>
-	</section>
-
-
-
-
-	<section class="profile" id="photo-flow-control-buttons">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-6">
-					<button class="btn btn-info pull-left" id="personal-info"><i class="fa fa-arrow-left"></i> Personal Info</button>
-				</div>
-				<div class="col-xs-6">
-					{{#if this.admin_approval}}
-						<button class="btn btn-info pull-right" id="personalize-hand">Personalize <i class="fa fa-arrow-right"></i></button>
-					{{else}}
-						<label class="pull-right">Awaiting admin approval</label>
-					{{/if}}
+		<div class="alert alert-warning {{hidden}}">
+			<strong>Cargando!</strong> Espere un momento.
+			<br>
+			<div class="progress">
+				<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:2%"> %
 				</div>
 			</div>
 		</div>
-	</section>
+
+	</div>
+
+	<div class="container" id="photo-uploads">
+		<div class="row">
+			{{#each photos}}
+			<div class="col-xs-6 col-sm-4">
+				{{> photoHolder}}
+				<br>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<button role="button" class="btn btn-info btn-block" id="photo-to-personalize">Continuar</button>
+			</div>
+		</div>
+	</div>
+
 </template>
 
-<template name="photo">
-	<img class="img-responsive photo" src="{{secure_url}}">
+<template name="photoHolder">
+	<div class="photo-holder" id="{{this._id}}">
+	</div>
 </template>
-
--->
-

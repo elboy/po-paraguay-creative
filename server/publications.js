@@ -4,6 +4,10 @@ Meteor.publish('currentOrder', function(currentOrder){
 	return Orders.find({user_id: userId, _id: currentOrder});
 });
 
+Meteor.publish('adminOrder', function(currentOrder){
+	return Orders.find({_id: currentOrder});
+});
+
 // publishes data of all orders for current user
 Meteor.publish('userOrders', function(){
 	var userId = this.userId;
@@ -16,14 +20,14 @@ Meteor.publish('allOrders', function(){
 });
 
 // publishes data of pictures corresponding to current order
-Meteor.publish('orderPhotos', function(orderId){
+Meteor.publish('orderPhotos', function(currentOrder){
 	var userId = this.userId;
-	return Images.find({user_id: userId, order_id: orderId});
+	return Images.find({user_id: userId, order_id: currentOrder});
 });
 
 // publishes data of pictures corresponding to current order (for admin)
-Meteor.publish('allPhotos', function(){
-	return Images.find({});
+Meteor.publish('adminOrderPhotos', function(currentOrder){
+	return Images.find({order_id: currentOrder});
 });
 
 // publishes data of all users (for admin)

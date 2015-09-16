@@ -1,22 +1,55 @@
 <template name="create">
-	<section id="create-order-form">
+
+	{{> profileNav}}
+
+	<section class="profile-header" id="create-header">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<div class="order-form">	
-						{{#autoForm collection="Orders" id="insertOrderForm" type="insert"}}
-							<fieldset>
-								<legend>Add an order</legend>
-								{{> afQuickField name='name' placeholder="schemaLabel"}}
-								{{> afQuickField name='date_of_birth'}}
-								{{> afQuickField name='address' placeholder="schemaLabel"}}
-								{{> afQuickField name='phone_number' id="desc" }}
-							</fieldset>
-							<button type="submit" class="btn btn-info">Continue</button>
-						{{/autoForm}}
-					</div>
+					<h4>
+						<i class="fa fa-clipboard"></i> Datos Personales
+					</h4>
+					<p>Panel de creacion de manos</p>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<div class="container">
+		<div class="order-form">	
+			<form class="form-horizontal" role="form">
+				<div class="form-group {{errorClass 'name'}} has-feedback">
+					<div class="col-xs-12">
+						<input class="form-control" type="text" name="name" placeholder="Nombre de usuario" maxlength="30">
+						<i class="fa fa-user form-control-feedback"></i>
+						<span class="help-block">{{errorMessage 'name'}}</span>
+					</div>
+				</div>
+				<div class="form-group {{errorClass 'birthday'}} has-feedback">
+					<div class="col-xs-12">
+						<input class="form-control" type="text" name="birthday" placeholder="Fecha de nacamiento" maxlength="10">
+						<i class="fa fa-calendar form-control-feedback"></i>
+						<span class="help-block">{{errorMessage 'birthday'}}</span>
+					</div>
+				</div>
+				<div class="form-group {{errorClass 'address'}} has-feedback">
+					<div class="col-xs-12">
+						<input class="form-control" type="text" name="address" placeholder="Dirección de delivery" maxlength="50">
+						<i class="fa fa-location-arrow form-control-feedback"></i>
+						<span class="help-block">{{errorMessage 'address'}}</span>
+					</div>
+				</div>
+				<div class="form-group {{errorClass 'phone'}} has-feedback">
+					<div class="col-xs-12">
+						<input class="form-control" type="text" id="desc" name="phone" placeholder="Numero de telefono">
+						<i class="fa fa-phone form-control-feedback"></i>
+						<span class="help-block">{{errorMessage 'phone'}}</span>
+					</div>
+				</div>
+
+				<input type="submit" class="btn btn-info btn-block" value="Add Order">
+    			
+			</form>
+		</div>
+	</div>
 </template>

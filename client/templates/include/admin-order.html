@@ -1,0 +1,31 @@
+<template name="adminOrder">
+	<div class="container">
+		<div class="jumbotron">
+			<h2>Order for {{name}}</h2>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				Nombre de cuenta: Elliott <br>
+				Nombre de Pedido: {{name}} <br>
+				Fecha de nacamiento: {{birthday}} <br>
+				Dirección: {{address}} <br>
+				Numero de teléfono: {{phone}} <br>
+				<hr>
+			{{#if admin_approval}} 
+            	<button type="button" class="btn btn-default unapprove-admin">Unapprove</button> 
+        	{{else}} 
+            	<button type="button" class="btn btn-default approve-admin">Approve</button>
+        	{{/if}}
+			</div>
+			<div class="col-sm-6">
+				{{#each photos}}
+					<img src="{{secure_url}}" class="admin-order-photo">
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</template>
