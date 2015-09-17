@@ -4,10 +4,12 @@
 		<div class="panel-body">
 
 			<form role="form" id="personalize-form">
+			<div class="row">
 			<div class="col-sm-6">
 				<div class="form-group">
 					<label for="select-wrist">Select Wrist Color:</label>
 					<select class="form-control select-color" id="select-wrist">
+						<option class="hide-remove">Pick One</option>
 						<option>Red</option>
 						<option>Orange</option>
 						<option>Yellow</option>
@@ -19,6 +21,7 @@
 				<div class="form-group">
 					<label for="select-hand">Select Hand Color:</label>
 					<select class="form-control select-color" id="select-hand">
+						<option class="hide-remove">Pick One</option>
 						<option>Red</option>
 						<option>Orange</option>
 						<option>Yellow</option>
@@ -30,6 +33,7 @@
 				<div class="form-group">
 					<label for="select-fingers">Select Fingers Color:</label>
 					<select class="form-control select-color" id="select-fingers">
+						<option class="hide-remove">Pick One</option>
 						<option>Red</option>
 						<option>Orange</option>
 						<option>Yellow</option>
@@ -40,12 +44,15 @@
 				</div>
 				<div class="form-group">
 					<label for="addons">Special Requests:</label>
-					<textarea class="form-control" rows="3" id="addons" placeholder="You can make special requests here."></textarea>
+					<textarea class="form-control" rows="3" id="addons" placeholder="You can make special requests here." maxlength="1000"></textarea>
 				</div>
 			</div>
-			<div class="col-sm-6">
-				<img class="img-responsive img-rounded" src="{{colors}}">
+			<div class="col-sm-6 hidden-xs">
+				Example Po:
+				<img class="img-responsive img-rounded" src="/colors/po-example1.png">
 			</div>
+			</div>
+				<hr>
 				<input type="submit" class="btn btn-info btn-block" value="Continue">
 
 			</form>
