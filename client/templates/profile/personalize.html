@@ -1,28 +1,62 @@
 <template name="personalize">
+	<div class="panel panel-info">
+		<div class="panel-heading"><strong>Personalize</strong></div>
+		<div class="panel-body">
 
-	{{> profileNav}}
-
-	<section class="profile-header" id="personalize-header">
-		<div class="container">
+			<form role="form" id="personalize-form">
 			<div class="row">
-				<div class="col-xs-12">
-					<h4>
-						<i class="fa fa-hand-peace-o"></i> Personalize
-					</h4>
-					<p>Select colors for each part of your hand</p>
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="select-wrist">Select Wrist Color:</label>
+					<select class="form-control select-color" id="select-wrist">
+						<option class="hide-remove">Pick One</option>
+						<option>Red</option>
+						<option>Orange</option>
+						<option>Yellow</option>
+						<option>Blue</option>
+						<option>Indigo</option>
+						<option>Violet</option>
+					</select>
 				</div>
-
+				<div class="form-group">
+					<label for="select-hand">Select Hand Color:</label>
+					<select class="form-control select-color" id="select-hand">
+						<option class="hide-remove">Pick One</option>
+						<option>Red</option>
+						<option>Orange</option>
+						<option>Yellow</option>
+						<option>Blue</option>
+						<option>Indigo</option>
+						<option>Violet</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="select-fingers">Select Fingers Color:</label>
+					<select class="form-control select-color" id="select-fingers">
+						<option class="hide-remove">Pick One</option>
+						<option>Red</option>
+						<option>Orange</option>
+						<option>Yellow</option>
+						<option>Blue</option>
+						<option>Indigo</option>
+						<option>Violet</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="addons">Special Requests:</label>
+					<textarea class="form-control" rows="3" id="addons" placeholder="You can make special requests here." maxlength="1000"></textarea>
+				</div>
 			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<button role="button" class="btn btn-info btn-block personalize-to-checkout">Continuar</button>
+			<div class="col-sm-6 hidden-xs">
+				Example Po:
+				<img class="img-responsive img-rounded" src="/colors/po-example1.png">
 			</div>
+			</div>
+				<hr>
+				<input type="submit" class="btn btn-info btn-block" value="Continue">
+
+			</form>
 		</div>
+
 	</div>
-
-
 </template>

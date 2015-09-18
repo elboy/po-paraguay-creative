@@ -21,7 +21,7 @@
 			{{#if orderCount}}
 
 				{{#each orders}}
-					<div class="panel panel-info">
+					<div class="panel panel-info link-to-info">
 						{{> order}}
     				</div>
 					<hr>
@@ -61,7 +61,7 @@
 			<div class="progress-bar link-to-photo link {{photoColor}}" style="width: 25%">
 				<i class="fa fa-camera"></i> <span class="hidden-xs">Photo Upload</span>
 			</div>
-		{{#if admin_approval}}
+		{{#if reached_personalize}}
 			<div class="progress-bar link-to-personalize link {{personalizeColor}}" style="width: 25%">
 				<i class="fa fa-hand-peace-o"></i> <span class="hidden-xs">Personalize</span>
 			</div>

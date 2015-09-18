@@ -1,8 +1,8 @@
-Template.dashboard.onCreated(function(){
-	Session.set("tab", "tab-dashboard");
+Template.dashboard.onRendered(function(){
+	Session.set("step", "section-flow-dashboard");
 });
 
-orders = Orders.find({}, {sort: {created_at: -1}});
+orders = Orders.find({name: {$exists: true}}, {sort: {created_at: -1}});
 
 Template.dashboard.helpers({
 	orders: function(){
@@ -19,29 +19,44 @@ Template.dashboard.helpers({
 
 Template.dashboard.events({
 	'click .link-to-info':function(){
+		Session.set("step", "section-flow-info");
 		var orderId = this._id;
-		Router.go('info', {_id: orderId});
+		Router.go('flow', {_id: orderId});
 	},
+	/*
 	'click .link-to-photo':function(){
+		Session.set("step", "section-flow-photo");
 		var orderId = this._id;
-		Router.go('photo', {_id: orderId});
+		Router.go('flow', {_id: orderId});
 	},
 	'click .link-to-personalize':function(){
+		Session.set("step", "section-flow-personalize");
 		var orderId = this._id;
-		Router.go('personalize', {_id: orderId});
+		Router.go('flow', {_id: orderId});
 	},
 	'click .link-to-checkout':function(){
+		Session.set("step", "section-flow-checkout");
 		var orderId = this._id;
-		Router.go('checkout', {_id: orderId});
+		Router.go('flow', {_id: orderId});
 	},
+	*/
 	'click #link-to-create-hand':function(){
-		Router.go('create');
+		Meteor.call('orderInsert', function(error, result) { 
+			// print the error to the console and abort
+			if (error){
+				console.log(error);
+				return;
+			}
+
+			Session.set("step", "info");
+	    	Router.go('flow', {_id: result._id});
+	    });
 	}
 });
 
 Template.order.helpers({
 	photoColor:function(){
-		return this.admin_approval ? "progress-bar-success" : "progress-bar-warning";
+		return this.reached_personalize ? "progress-bar-success" : "progress-bar-warning";
 	},
 	personalizeColor:function(){
 		return this.reached_checkout ? "progress-bar-success" : "progress-bar-warning";

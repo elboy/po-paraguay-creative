@@ -1,6 +1,15 @@
-Template.create.onCreated(function() { 
+Template.create.onRendered(function(){
 	Session.set('orderSubmitErrors', {});
-	Session.set("tab", "tab-info");
+});
+
+Template.create.onRendered(function() { 
+
+	for (var i = 1; i < 32; i++){
+		$('#birthday-day').append($("<option></option>").text(i));
+	}
+	for (var i = 2015; i > 1899; i--){
+		$('#birthday-year').append($("<option></option>").text(i));
+	}
 });
 
 Template.create.helpers({ 
@@ -13,34 +22,6 @@ Template.create.helpers({
 });
 
 Template.create.events({
-	'submit form': function(e){
-		e.preventDefault();
-
-		var order = {
-			name: $(e.target).find('[name=name]').val(), 
-			birthday: $(e.target).find('[name=birthday]').val(),
-			address: $(e.target).find('[name=address]').val(),
-			phone: $(e.target).find('[name=phone]').val()
-		};
-
-		if (order.phone)
-			order.phone = order.phone.replace(/\D/g, '');
-
-		var errors = validateOrder(order); 
-		if (errors.name || errors.birthday || errors.address || errors.phone)
-			return Session.set('orderSubmitErrors', errors);
-
-		Meteor.call('orderInsert', order, function(error, result) { 
-			// display the error to the user and abort
-			if (error){
-				console.log(error);
-				return;
-			}
-			//return throwError(error.reason);
-	      
-	    	Router.go('photo', {_id: result._id});
-	    });
-	},
 	'keyup #desc': function(event){
 		if(!event.shiftKey && event.keyCode !== 8 && event.keyCode !== 16){
 			var $input = $(event.target);
@@ -55,10 +36,10 @@ Template.create.events({
 				$input.val("(" + stripped + ") ");
 			} else if (len < 6) {
 				$input.val("(" + stripped.substring(0,3) + ") " + stripped.substring(3, len));
-			} else if (len < 11){
+			} else if (len < 10){
 				$input.val("(" + stripped.substring(0,3) + ") " + stripped.substring(3, 6) + "-" + stripped.substring(6, len));
 			} else {
-				$input.val("(" + stripped.substring(0,3) + ") " + stripped.substring(3, 6) + "-" + stripped.substring(6, 10));
+				$input.val("(" + stripped.substring(0,3) + ") " + stripped.substring(3, 6) + "-" + stripped.substring(6, 9));
 			}
 		}
 	}

@@ -1,0 +1,59 @@
+<template name="flow">
+	{{> profileNav}}
+<div id="flow-wrapper">
+	<div class="container">
+		<div class="flow-title">
+			<h2>Checkout Flow</h2>
+		</div>
+
+
+		<ol class="flowlist" id="checkout-flow">
+			<li class="section allow active" id="section-flow-info">
+				<div class="flow-title">
+					<span class="flow-number">1</span>
+					<h2><i class="fa fa-fw fa-info"></i> Info</h2>
+					<a>Edit</a>
+				</div>
+				<div class="step" id="flow-info">
+					{{#if created}}
+						{{> info}}
+					{{else}}
+						{{> create}}
+					{{/if}}
+				</div>
+			</li>
+			<li class="section" id="section-flow-photo">
+				<div class="flow-title">
+					<span class="flow-number">2</span>
+					<h2><i class="fa fa-fw fa-photo"></i> Photo</h2>
+					<a>Edit</a>
+				</div>
+				<div class="step" id="flow-photo">
+					{{> photo}}
+				</div>
+			</li>
+			<li class="section " id="section-flow-personalize">
+				<div class="flow-title">
+					<span class="flow-number">3</span>
+					<h2><i class="fa fa-fw fa-hand-peace-o"></i> Personalize</h2>
+					<a>Edit</a>
+				</div>
+				<div class="step" id="flow-personalize">
+					{{> personalize}}
+				</div>
+			</li>
+			<li class="section" id="section-flow-checkout">
+				<div class="flow-title">
+					<span class="flow-number">4</span>
+					<h2><i class="fa fa-fw fa-check"></i> Checkout</h2>
+					<a>Edit</a>
+				</div>
+				<div class="step" id="flow-checkout">
+					{{> checkout}}
+				</div>
+			</li>
+		</ol>
+	</div>
+</div>
+
+</template>
