@@ -1,0 +1,146 @@
+// in components
+// styles for reusable components
+
+
+#main {
+
+  .profile-header {
+    background-color: #F4FAFF;
+    text-align: center;
+    color: @po-blue;
+    font-weight: 300;
+
+    padding: 15px 0 5px 0;
+    margin-bottom: 20px;
+
+  }
+
+    #photo-uploads {
+      margin-top: 20px;
+    }
+
+
+    // in photo.html
+    .panel-default {
+      .panel-heading {
+        background-color: #F4FAFF;
+      }
+    }
+
+    // in admin-order.html
+    .admin-order-photo {
+      padding: 10px 0;
+      width: 300px;
+      height: auto;
+    }
+
+}
+
+
+
+/* COSTUMIZE MODAL SIGN IN
+-----------------------------------------------------
+*/
+.modal {
+  .modal-header, h4, .close {
+    /*background-color: #5cb85c;*/
+    background-color: #00a8e1;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .btn-facebook {
+    border-radius: 5px;
+  }
+
+  .btn-facebook:hover{
+    color: #f9f9f9;
+  }
+
+  .option-divider {
+    text-align: center;
+    margin: 16px 0;
+    font-size: 20px;
+    font-style: italic;
+  }
+
+  .modal-body{
+    color: #000;
+  }
+
+  .modal-footer {
+    background-color: #f9f9f9;
+    color: #000;
+  }
+
+}
+
+/* OTHER COMPONENTS
+---------------------------------------
+*/
+
+.link {
+    cursor: hand;
+    cursor: pointer;
+}
+
+.hide-remove {
+    display: none;
+}
+
+.hide-remain {
+    visibility: hidden;
+}
+
+.progress {
+  margin: 0;
+}
+
+
+
+/* COSTUMIZE FILE UPLOAD BUTTON
+-----------------------------------------------------
+http://stackoverflow.com/questions/11235206/twitter-bootstrap-form-file-element-upload-button 
+*/
+
+
+
+/* COSTUMIZE FILE UPLOAD BUTTON
+-----------------------------------------------------
+http://geniuscarrier.com/how-to-style-a-html-file-upload-button-in-pure-css/
+*/
+
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+.fileUpload input#upload-photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+/* CUSTOMIZE THE 404 NOT FOUND PAGE
+-------------------------------------------------- */
+
+.jumbotron {
+  text-align: center;
+}
+
+.jumbotron p {
+  text-align: center;
+}
+
+.jumbotron h2{
+  font-size: 60px;
+  font-weight: 100;
+}
+
