@@ -46,10 +46,11 @@ Template.photoHolder.onRendered(function(){
 
 var imageDetails = {
 	format: 'jpg',
-	//width: 600,
-	//height: 600,
-	//crop: 'scale',
-	class: "img-responsive"
+	width: 600,
+	height: 600,
+	crop: 'scale',
+	class: "img-thumbnail img-rounded img-responsive"
+	//background: "#ffcf2b",
 };
 
 function addPhoto(order_id){

@@ -7,9 +7,6 @@ Template.personalize.onRendered(function(){
 		$('select#select-wrist').val(order.wrist_color);
 		$('select#select-hand').val(order.hand_color);
 		$('select#select-fingers').val(order.fingers_color);
-		if(order.additions){
-			$('select#addons').val(order.additions);
-		}
 	} else {
 		Session.set("colors", "Red-Red-Red");
 	}

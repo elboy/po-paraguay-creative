@@ -69,25 +69,15 @@ Template.flow.events({
 	'submit form#create-form': function(e){
 		e.preventDefault();
 
-		var day = $('#birthday-day').val();
-		var month = $('#birthday-month').val();
-		var year = $('#birthday-year').val();
-
-		var birthday = day + " de " + month + ", " + year;
-		console.log(birthday);
-
-
 		var order = {
-			name: $('[name=name]').val(), 
-			birthday: birthday,
-			address: $('[name=address]').val(),
-			phone: $('[name=phone]').val()
+			name: $(e.target).find('[name=name]').val(), 
+			birthday: $(e.target).find('[name=birthday]').val(),
+			address: $(e.target).find('[name=address]').val(),
+			phone: $(e.target).find('[name=phone]').val()
 		};
 
-/*
 		if (order.phone)
 			order.phone = order.phone.replace(/\D/g, '');
-*/
 
 		var errors = validateOrder(order); 
 		if (errors.name || errors.birthday || errors.address || errors.phone)
@@ -114,11 +104,6 @@ Template.flow.events({
 			hand_color: $(e.target).find('#select-hand').val(),
 			fingers_color: $(e.target).find('#select-fingers').val()
 		};
-
-		var addons = $(e.target).find('#addons').val();
-		if (addons){
-			colors.additions = addons;
-		}
 
 		Meteor.call('orderPersonalize', colors, this._id, function(error, result){
 			// display the error to the console and abort
